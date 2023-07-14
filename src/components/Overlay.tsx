@@ -4,20 +4,53 @@ import { useEffect, useState } from "react";
 import { Panel } from "./Panel";
 
 const Overlay = () => {
+  const [currentTournamentId, setCurrentTournamentId] = useState<number>(0);
   const [tournament, setTournament] = useState<Tournament>();
   const [teamOne, setTeamOne] = useState<TeamName>('yellow');
   const [teamTwo, setTeamTwo] = useState<TeamName>('blue');
+
+  const [text, setText] = useState<string>('');
 
   useEffect(() => {
     const fetchData = async () => {
       // Will first need to query latest active tournament from Tournaments API
       // Then query single tournament Id from Tournament API
-      const response = await fetch('https://fftbg.com/api/tournament/1581360864550');
+
+      // TODO: Implement better fetching/react-query
+      const t = await (await fetch ('https://fftbg.com/api/tournaments?limit=1')).json() as Tournament[];
+      console.log(t);
+      
+      const id = t[0].ID;
+      setCurrentTournamentId(id);
+
+      console.log(id);
+
+      // Probably can consolidate these two calls
+      const response = await fetch(`https://fftbg.com/api/tournament/${id}`);
       const data: Tournament = await response.json() as Tournament;
 
       console.log(data);
-
       setTournament(data);
+
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      // const res = await fetch(`http://fftbattleground.com/fftbg/champion.txt`, { 
+      //   headers: {
+      //     'Access-Control-Allow-Origin': '*',
+      //     'Content-Type': 'text/plain',
+      //   } 
+      // });
+
+      // const textArray = res.split('\n');
+
+      // console.log(res.text());
+      // console.log(res.size);
+      // console.log(res);
+
+      // console.log(res);
+
+      // setText(res);
+      // console.log(textArray);
+
       // console.log(tournament);
     }
 
@@ -42,6 +75,9 @@ const Overlay = () => {
             <Panel key={unit.Name} unit={unit} side={2}/>
           )
         })}
+      </div>
+      <div>
+       text = {text}
       </div>
     </div>
   )
