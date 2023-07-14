@@ -32,6 +32,20 @@ const Overlay = () => {
       console.log(data);
       setTournament(data);
 
+
+
+      /*
+      * Can just use [Winners] from the tournament API - Latest winner will be posted and can move on to next
+      * match through a tournament mapping const schema
+      * 
+      * This is updated very soon after the match, and might make since to call from tournaments/limit=1 
+      * as it's only 1kb
+      * 
+      * Will have to wait to start the panels because they move for ~40 seconds while betting is happening.
+      * 
+      * Could move Panes to the right always, the width % of the chat log
+      */
+
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       // const res = await fetch(`http://fftbattleground.com/fftbg/champion.txt`, { 
       //   headers: {
