@@ -17,10 +17,15 @@ export const Panel = (props: UnitProps) => {
   const [isShown, setIsShown] = useState(false);
   const unit = props.unit;
 
+
+
   return (
     <div
       className='border-4'
-      onMouseEnter={() => setIsShown(true)}
+      onMouseEnter={() => {
+        setIsShown(true);
+        const res = fetch('http://localhost:8080/api/hello').then(res => res.text().then(data => console.log(data)));
+      }}
       onMouseLeave={() => setIsShown(false)}>
         <div className=''>
           { unit.Name }

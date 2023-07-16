@@ -6,12 +6,12 @@ import { Panel } from "./Panel";
 const Overlay = () => {
   const [currentTournamentId, setCurrentTournamentId] = useState<number>(0);
   const [tournament, setTournament] = useState<Tournament>();
-  const [teamOne, setTeamOne] = useState<TeamName>('yellow');
+  const [teamOne, setTeamOne] = useState<TeamName>('red');
   const [teamTwo, setTeamTwo] = useState<TeamName>('blue');
 
-  const [text, setText] = useState<string>('');
+  const [text, setText] = useState<string>('sdfsdf');
 
-  useEffect(() => {
+  useEffect(() => {    
     const fetchData = async () => {
       // Will first need to query latest active tournament from Tournaments API
       // Then query single tournament Id from Tournament API
@@ -31,8 +31,6 @@ const Overlay = () => {
 
       console.log(data);
       setTournament(data);
-
-
 
       /*
       * Can just use [Winners] from the tournament API - Latest winner will be posted and can move on to next
@@ -71,6 +69,7 @@ const Overlay = () => {
     const res = fetchData(); // TODO
 
   }, []);
+  
 
   // TODO - teams array could just be one to iterate through, and first half float left
   return (
