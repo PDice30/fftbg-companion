@@ -5,29 +5,21 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "moduleResolution": "Node",
     "strict": true,
-    "useDefineForClassFields": true,
     "sourceMap": true,
-    "skipLibCheck": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "types": ["vite/client", "node"],
-    "noImplicitReturns": true,
-
-    /* Bundler mode */
     "noEmit": true,
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    
-    "jsx": "react-jsx",
-    "allowJs": false,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noImplicitReturns": true,
+    "jsx": "react-jsx",
+    "allowJs": false,
+    "isolatedModules": true,
+    "skipLibCheck": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowImportingTsExtensions": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["./src"]
 }

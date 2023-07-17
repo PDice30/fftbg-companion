@@ -1,3 +1,8 @@
+export type TournamentData = {
+  teamOne: Team,
+  teamTwo: Team,
+}
+
 export type Tournament = {
   Type: string,
   ID: number,

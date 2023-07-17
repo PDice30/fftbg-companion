@@ -13,7 +13,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: true,
+    project: ['./tsconfig.json', './tsconfig.server.json'],
     tsconfigRootDir: __dirname,
   },
   plugins: ['react-refresh'],
@@ -24,5 +24,5 @@ module.exports = {
     ],
     '@typescript-eslint/no-non-null-assertion': 'off',
   },
-  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'tailwind.config.js'], 
+  ignorePatterns: ['.eslintrc.cjs', 'vite.config.ts', 'tailwind.config.js', 'postcss.config.js'], 
 }

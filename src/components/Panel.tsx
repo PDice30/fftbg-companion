@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Tournament, Unit } from "../models"
+import { Unit } from "../models"
 
 type UnitProps = {
   key: string,
@@ -18,17 +18,17 @@ export const Panel = (props: UnitProps) => {
   const unit = props.unit;
 
   //import baseurl/port etc
-  const handleMouseOver = async () => {
-    const tournament = await (await fetch('http://localhost:8080/api/hello')).json() as Tournament;
-    console.log(tournament);
-  }
+  // const handleMouseOver = async () => {
+  //   const tournament = await (await fetch('http://localhost:8080/api/currentMatchup')).json() as Tournament;
+  //   console.log(tournament);
+  // }
 
   return (
     <div
       className='border-4'
       onMouseEnter={() => {
         setIsShown(true);
-        void handleMouseOver();
+        // void handleMouseOver();
       }}
       onMouseLeave={() => setIsShown(false)}>
         <div className=''>

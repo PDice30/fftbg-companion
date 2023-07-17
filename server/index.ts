@@ -1,7 +1,7 @@
 import express, { Express, json } from "express";
 import cors from 'cors';
 
-import router from './router';
+import apiRouter from './routes';
 
 const app: Express = express();
 
@@ -10,7 +10,7 @@ const port = 8080; // default port to list
 app.use(json());
 app.use(cors());
 
-app.use('/api', router);
+app.use('/api', apiRouter);
 
 // start the Express server
 app.listen( port, () => {

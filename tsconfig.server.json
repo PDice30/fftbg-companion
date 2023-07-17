@@ -3,8 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",
+    // "noEmit": true
   },
-  
-  "include": ["server/*.ts"],
-  "exclude": ["src"]
+  "include": ["./server"],
+  "exclude": ["./src"]
 }

@@ -2,15 +2,12 @@
   "name": "fftbg-companion",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
     "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
     "client:dev": "vite",
     "server:dev": "ts-node-dev --project tsconfig.server.json ./server",
-    "server:dev2": "nodemon --exec node --loader ts-node/esm ./server",
-    "server:dev3": "tsc --project tsconfig.server.json && node ./dist/server/index.js",
-    "dev-server": "tsc-watch --noClear -p ./tsconfig.server.json --onSuccess \"node ./dist/server/index.js\"",
-    "build": "tsc && vite build",
+    "client:build": "tsc && vite build",
+    "server:build": "tsc --project tsconfig.server.json",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
