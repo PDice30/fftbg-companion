@@ -9,6 +9,7 @@
     "server:dev": "ts-node-dev --project tsconfig.server.json ./server",
     "server:dev2": "nodemon --exec node --loader ts-node/esm ./server",
     "server:dev3": "tsc --project tsconfig.server.json && node ./dist/server/index.js",
+    "dev-server": "tsc-watch --noClear -p ./tsconfig.server.json --onSuccess \"node ./dist/server/index.js\"",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -41,6 +42,7 @@
     "tailwindcss": "^3.3.2",
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
+    "tsc-watch": "^6.0.4",
     "typescript": "^5.1.6",
     "vite": "^4.4.0"
   }
