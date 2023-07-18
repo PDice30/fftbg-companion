@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Unit } from "../models"
+import { Pane } from "./Pane"
 
 type UnitProps = {
   key: string,
@@ -17,31 +18,16 @@ export const Panel = (props: UnitProps) => {
   const [isShown, setIsShown] = useState(false);
   const unit = props.unit;
 
-  //import baseurl/port etc
-  // const handleMouseOver = async () => {
-  //   const tournament = await (await fetch('http://localhost:8080/api/currentMatchup')).json() as Tournament;
-  //   console.log(tournament);
-  // }
-
   return (
     <div
       className='border-4'
       onMouseEnter={() => {
         setIsShown(true);
-        // void handleMouseOver();
       }}
       onMouseLeave={() => setIsShown(false)}>
         <div className=''>
-          { unit.Name }
           { isShown && 
-            <>
-              <span>{unit.Class}</span>
-              <span>{unit.Brave}</span>
-              <span>{unit.Faith}</span>
-              <span>{unit.Sign}</span>
-              <span>{unit.Gender}</span>
-              {}
-            </>
+            <Pane unit={unit} />
           }
         </div>
     </div>

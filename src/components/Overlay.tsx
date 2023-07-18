@@ -1,33 +1,26 @@
-import { Team, TeamName, Tournament } from "../models";
+import { Team, TournamentData } from "../models";
 // import * as data from '../data/tournament.json';
 import { useEffect, useState } from "react";
 import { Panel } from "./Panel";
 
 const Overlay = () => {
-  // const [currentTournamentId, setCurrentTournamentId] = useState<number>(0);
-  const [tournament, setTournament] = useState<Tournament>();
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
-  const [teamOneName, setTeamNameOne] = useState<TeamName>('red');
-  const [teamTwoName, setTeamNameTwo] = useState<TeamName>('blue');
-
   const [text, setText] = useState<string>('sdfsdf');
 
   useEffect(() => {    
     // TODO : react-query
     const fetchData = async () => {
       const response = await fetch(`http://localhost:8080/api/tournament`);
-      const data: Tournament = await response.json() as Tournament;
+      const data: TournamentData = await response.json() as TournamentData;
 
-      console.log(data);
-      setTournament(data);
-      setTeamNameOne('red');
-      setTeamNameTwo('blue');
+      setTeamOne(data.teamOne);
+      setTeamTwo(data.teamTwo);
+
       setText('asdf');
     }
 
     setInterval(() => void fetchData(), 10000);
-
     void fetchData(); // TODO
     
 
@@ -39,14 +32,14 @@ const Overlay = () => {
     <div className='bg-red-100 w-3/4 h-screen'>
       {/* Will Need to find active teams */}
       <div className='grid grid-cols-1 h-screen w-1/6 float-left'>
-        {tournament && tournament.Teams[`${teamOneName}`].Units.map(unit => {
+        {teamOne && teamOne.Units.map(unit => {
           return (
             <Panel key={unit.Name} unit={unit} side={1}/>
           )
         })}
       </div>
       <div className='grid grid-cols-1 h-screen w-1/6 float-right'>
-        {tournament && tournament.Teams[`${teamTwoName}`].Units.map(unit => {
+        {teamTwo && teamTwo.Units.map(unit => {
           return (
             <Panel key={unit.Name} unit={unit} side={2}/>
           )
