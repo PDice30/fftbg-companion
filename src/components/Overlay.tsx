@@ -11,7 +11,7 @@ const Overlay = () => {
   useEffect(() => {    
     // TODO : react-query
     const fetchData = async () => {
-      const response = await fetch(`http://localhost:8080/api/tournament`);
+      const response = await fetch(`http://localhost:3001/api/tournament`);
       const data: TournamentData = await response.json() as TournamentData;
 
       setTeamOne(data.teamOne);

@@ -57,4 +57,4 @@ export type Unit = {
   RaidBoss: boolean
 }
 
-export type TeamName = 'black' | 'blue' | 'brown' | 'champion' | 'green' | 'purple' | 'red' | 'white' | 'yellow'; 
+export type TeamName = 'red' | 'blue' | 'green' | 'yellow' | 'white' | 'black' | 'purple' | 'brown' | 'champion'; 

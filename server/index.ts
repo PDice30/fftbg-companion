@@ -5,7 +5,7 @@ import apiRouter from './routes';
 
 const app: Express = express();
 
-const port = 8080; // default port to list
+const port = 3001; // default port to list
 
 app.use(json());
 app.use(cors());
