@@ -13,14 +13,14 @@ const determineMatchup = (winners: string[]) => {
   // TODO: logic is very scuffed
   if (matchNumber < 6) {
     const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[matchNumber === 4 ? 0 : 1])?.[0];
-    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 5 ? 2 : 3])?.[0];
+    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 4 ? 2 : 3])?.[0];
     if (winnerOne && winnerTwo) {
       return MATCHUPS[matchNumber].find(([teamOne, teamtwo]) => teamOne === winnerOne && teamtwo === winnerTwo);
     }
     return DEFAULT_MATCHUP;
   }
 
-  if (matchNumber < 8) {
+  if (matchNumber < 7) {
     const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[4])?.[0];
     const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[5])?.[0];
     if (winnerOne && winnerTwo) {

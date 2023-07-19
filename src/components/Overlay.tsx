@@ -17,6 +17,7 @@ const Overlay = () => {
       // const response = await fetch(`http://localhost:3001/api/tournament`);
       // const data: TournamentData = await response.json() as TournamentData;
 
+      // TODO: move to helper function
       const id = (await (await fetch('https://fftbg.com/api/tournaments?limit=1')).json() as Tournament[])[0].ID.toString();
       // TODO : Fix linting
       const tournament = (await (await fetch(`https://fftbg.com/api/tournament/${id}`)).json() as Tournament);
