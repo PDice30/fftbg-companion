@@ -1,6 +1,8 @@
-export const TEAMS: string[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
+import { Team, TeamName } from "../models";
 
-export const MATCHUPS = [
+export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
+
+export const MATCHUPS: TeamName[][][] = [
   // ROUND 1
   [
     [TEAMS[0], TEAMS[1]]

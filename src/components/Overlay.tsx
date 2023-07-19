@@ -1,7 +1,8 @@
-import { Team, TournamentData } from "../models";
+import { Team, Tournament, TournamentData } from "../models";
 // import * as data from '../data/tournament.json';
 import { useEffect, useState } from "react";
 import { Panel } from "./Panel";
+import determineMatchup from "../utils";
 
 const Overlay = () => {
   const [teamOne, setTeamOne] = useState<Team>();
@@ -9,13 +10,26 @@ const Overlay = () => {
   const [text, setText] = useState<string>('sdfsdf');
 
   useEffect(() => {    
-    // TODO : react-query
-    const fetchData = async () => {
-      const response = await fetch(`http://localhost:3001/api/tournament`);
-      const data: TournamentData = await response.json() as TournamentData;
 
-      setTeamOne(data.teamOne);
-      setTeamTwo(data.teamTwo);
+    // TODO : react-query
+    // If Winners.length === 8: Tournament is over, display "waiting" and wait a set time to call again and show teams
+    const fetchData = async () => {
+      // const response = await fetch(`http://localhost:3001/api/tournament`);
+      // const data: TournamentData = await response.json() as TournamentData;
+
+      const id = (await (await fetch('https://fftbg.com/api/tournaments?limit=1')).json() as Tournament[])[0].ID.toString();
+      // TODO : Fix linting
+      const tournament = (await (await fetch(`https://fftbg.com/api/tournament/${id}`)).json() as Tournament);
+  
+      const matchup = determineMatchup(tournament.Winners);
+      console.log(matchup);
+      if (matchup) {
+        
+        setTeamOne(tournament.Teams[`${matchup?.[0]}`])
+        // setTeamOne();
+        setTeamTwo(tournament.Teams[`${matchup?.[1]}`])
+      }
+      
 
       setText('asdf');
     }
