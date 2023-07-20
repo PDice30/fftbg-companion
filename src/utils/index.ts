@@ -6,6 +6,10 @@ const DEFAULT_MATCHUP: TeamName[] = ['red', 'blue'];
 
 const determineMatchup = (winners: string[]) => {
   const matchNumber = winners.length;
+
+  if (matchNumber == 8) {
+    return ['champion', 'champion'] as TeamName[];
+  }
   if (matchNumber < 4) {
     return MATCHUPS[matchNumber][0];
   }
@@ -18,7 +22,7 @@ const determineMatchup = (winners: string[]) => {
     const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 4 ? 1 : 3])?.[1];
     console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
     if (winnerOne && winnerTwo) {
-      return MATCHUPS[matchNumber].find(([teamOne, teamtwo]) => teamOne === winnerOne && teamtwo === winnerTwo);
+      return MATCHUPS[matchNumber].find(([teamOne, teamTwo]) => teamOne === winnerOne && teamTwo === winnerTwo);
     }
     return DEFAULT_MATCHUP;
   }
@@ -29,15 +33,18 @@ const determineMatchup = (winners: string[]) => {
     console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
     const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[5])?.[1];
     console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
+    // just return a new array here
     if (winnerOne && winnerTwo) {
-      return MATCHUPS[matchNumber].find(([teamOne, teamtwo]) => teamOne === winnerOne && teamtwo === winnerTwo);
+      return MATCHUPS[matchNumber].find(([teamOne, teamTwo]) => teamOne === winnerOne && teamTwo === winnerTwo);
     }
     return DEFAULT_MATCHUP;
   }
 
-  const winner = TEAMS.find(team => team == winners[matchNumber]);
+  console.log(winners[matchNumber - 1]);
+  const winner = TEAMS.find(team => team.toString() === winners[matchNumber - 1]);
   console.log(`To face champ: ${winner ? winner : ''}`);
 
+  // Breaks on champion screen
   if (winner) {
     return MATCHUPS[matchNumber][TEAMS.indexOf(winner)];
   }

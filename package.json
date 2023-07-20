@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "dev": "npm run client:dev",
     "client:dev": "vite",
     "server:dev": "ts-node-dev --project tsconfig.server.json ./server",
     "client:build": "tsc && vite build",

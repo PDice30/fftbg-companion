@@ -1,5 +1,8 @@
-import { Team, TeamName } from "../models";
+import { TeamName } from "../models";
 
+export const LOCAL_ICON_URL = './src/assets/images/icons/';
+export const EQUIPMENT_ICONS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];
+export const PLACEHOLDER_ITEM_ICONS: string[] = ['placeholderWeapon', 'placeholderShield', 'placeholderHelm', 'placeholderArmor', 'placeholderAccessory']
 export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
 
 export const MATCHUPS: TeamName[][][] = [

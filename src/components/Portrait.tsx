@@ -1,8 +1,8 @@
 import { useState } from "react"
 import { Unit } from "../models"
-import { Pane } from "./Pane"
+import { UnitPanel } from "./UnitPanel"
 
-type UnitProps = {
+type PortraitProps = {
   key: string,
   unit: Unit,
   side: number
@@ -14,20 +14,20 @@ type UnitProps = {
  * @param props 
  * @returns 
  */
-export const Panel = (props: UnitProps) => {
+export const Portrait = (props: PortraitProps) => {
   const [isShown, setIsShown] = useState(false);
   const unit = props.unit;
 
   return (
     <div
-      className='border-4'
+      // className='border-4'
       onMouseEnter={() => {
         setIsShown(true);
       }}
       onMouseLeave={() => setIsShown(false)}>
-        <div className=''>
+        <div>
           { isShown && 
-            <Pane unit={unit} />
+            <UnitPanel unit={unit} side={props.side} />
           }
         </div>
     </div>
