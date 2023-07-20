@@ -3,8 +3,9 @@ import { TeamName } from "../models";
 export const LOCAL_ICON_URL = './src/assets/images/icons/';
 export const EQUIPMENT_ICONS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];
 export const PLACEHOLDER_ITEM_ICONS: string[] = ['placeholderWeapon', 'placeholderShield', 'placeholderHelm', 'placeholderArmor', 'placeholderAccessory']
-export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
+export const ABILITY_ICONS: string[] = ['active', 'active', 'react', 'support', 'move'];
 
+export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
 export const MATCHUPS: TeamName[][][] = [
   // ROUND 1
   [
@@ -63,3 +64,26 @@ export const MATCHUPS: TeamName[][][] = [
     [TEAMS[7], TEAMS[8]],
   ],
 ];
+
+export const ABILITY_MAP = new Map([
+  ['Squire', 'Basic Skill'],
+  ['Chemist', 'Item'],
+  ['Knight', 'Battle Skill'],
+  ['Archer', 'Charge'],
+  ['Monk', 'Punch Art'],
+  ['Priest', 'White Magic'],
+  ['Wizard', 'Black Magic'],
+  ['TimeMage', 'Time Magic'],
+  ['Summoner', 'Summon Magic'],
+  ['Thief', 'Steal'],
+  ['Mediator', 'Talk Skill'],
+  ['Oracle', 'Yin Yang Magic'],
+  ['Geomancer', 'Elemental'],
+  ['Lancer', 'Jump'],
+  ['Samurai', 'Draw Out'],
+  ['Ninja', 'Throw'],
+  ['Calculator', 'Math Skill'],
+  ['Bard', 'Sing'],
+  ['Mime', 'Mimic'],
+  ['Dancer', 'Dance'],
+]);
