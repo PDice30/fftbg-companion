@@ -15,7 +15,7 @@ export const UnitPanel = (props: UnitPanelProps) => {
   const [examine, setExamine] = useState<any>();
 
   return (
-    <div className='w-pane h-1/4 absolute border-2 border-black bg-unit-panel inline' style={props.side === 1 ? {left: '9.5%'} : {left: '30.5%'}}>
+    <div className='w-pane h-1/4 absolute border-2 border-black rounded-md bg-unit-panel inline' style={props.side === 1 ? {left: '9.5%'} : {left: '30.5%'}}>
       { /* TODO: Below div will be long panel of other stats,info */ }
 
       { /** 
