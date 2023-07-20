@@ -23,12 +23,16 @@ const Overlay = () => {
       const tournament = (await (await fetch(`https://fftbg.com/api/tournament/${id}`)).json() as Tournament);
   
       const matchup = determineMatchup(tournament.Winners);
-      console.log(matchup);
+      // console.log(matchup);
       if (matchup) {
+        console.log(`Determined Matchup: ${matchup.toString()}`);
         
         setTeamOne(tournament.Teams[`${matchup?.[0]}`])
         // setTeamOne();
         setTeamTwo(tournament.Teams[`${matchup?.[1]}`])
+      } else {
+        setTeamOne(tournament.Teams.red);
+        setTeamTwo(tournament.Teams.blue);
       }
       
 

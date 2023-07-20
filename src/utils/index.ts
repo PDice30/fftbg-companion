@@ -12,8 +12,11 @@ const determineMatchup = (winners: string[]) => {
 
   // TODO: logic is very scuffed
   if (matchNumber < 6) {
-    const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[matchNumber === 4 ? 0 : 1])?.[0];
-    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 4 ? 2 : 3])?.[0];
+    console.log(`Winners: ${winners.toString()}`)
+    const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[matchNumber === 4 ? 0 : 2])?.[0];
+    console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
+    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 4 ? 1 : 3])?.[1];
+    console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
     if (winnerOne && winnerTwo) {
       return MATCHUPS[matchNumber].find(([teamOne, teamtwo]) => teamOne === winnerOne && teamtwo === winnerTwo);
     }
@@ -21,15 +24,19 @@ const determineMatchup = (winners: string[]) => {
   }
 
   if (matchNumber < 7) {
+    console.log(`Winners: ${winners.toString()}`)
     const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[4])?.[0];
-    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[5])?.[0];
+    console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
+    const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[5])?.[1];
+    console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
     if (winnerOne && winnerTwo) {
       return MATCHUPS[matchNumber].find(([teamOne, teamtwo]) => teamOne === winnerOne && teamtwo === winnerTwo);
     }
     return DEFAULT_MATCHUP;
   }
 
-  const winner = TEAMS.find(team => team === winners[matchNumber]);
+  const winner = TEAMS.find(team => team == winners[matchNumber]);
+  console.log(`To face champ: ${winner ? winner : ''}`);
 
   if (winner) {
     return MATCHUPS[matchNumber][TEAMS.indexOf(winner)];
