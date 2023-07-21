@@ -1,4 +1,4 @@
-import { useState } from "react"
+// import { useState } from "react"
 import { EQUIPMENT_ICONS, PLACEHOLDER_ITEM_ICONS, ABILITY_ICONS, ABILITY_MAP } from "../constants"
 import { Unit } from "../models"
 import { Details } from "./Details"
@@ -11,8 +11,11 @@ type UnitPanelProps = {
   unit: Unit
 }
 
+// TODO: the twitch player maintains a minimun aspect ratio
+// Even it goes really small it still loks 16:9
+
 export const UnitPanel = (props: UnitPanelProps) => {
-  const [examine, setExamine] = useState<any>();
+  // const [examine, setExamine] = useState<any>();
 
   return (
     <div className='w-pane h-1/4 absolute border-2 border-black rounded-md bg-unit-panel inline' style={props.side === 1 ? {left: '9.5%'} : {left: '30.5%'}}>
@@ -31,8 +34,8 @@ export const UnitPanel = (props: UnitPanelProps) => {
        * */ 
       }
         <div className='h-full w-1/16 float-left'>
-          { EQUIPMENT_ICONS.map(icon => 
-            <Icon name={icon} folder='static'/>
+          { EQUIPMENT_ICONS.map((icon, index) => 
+            <Icon key={index} name={icon} folder='static'/>
           )}
         </div>
       { /** 
@@ -40,8 +43,8 @@ export const UnitPanel = (props: UnitPanelProps) => {
        * */ 
       }
         <div className='h-full w-1/16 float-left'>
-          { PLACEHOLDER_ITEM_ICONS.map(icon => 
-            <Icon name={icon} folder='items' />
+          { PLACEHOLDER_ITEM_ICONS.map((icon, index) => 
+            <Icon key={index} name={icon} folder='items' />
           )}
         </div>
 
@@ -63,8 +66,8 @@ export const UnitPanel = (props: UnitPanelProps) => {
        * */ 
       }
         <div className='h-full w-1/16 float-left'>
-          { ABILITY_ICONS.map(icon => 
-            <Icon name={icon} folder='static' />
+          { ABILITY_ICONS.map((icon, index) => 
+            <Icon key={index} name={icon} folder='static' />
           )}
         </div>
 
