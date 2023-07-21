@@ -74,6 +74,7 @@ export const ABILITY_MAP = new Map([
   ['Priest', 'White Magic'],
   ['Wizard', 'Black Magic'],
   ['TimeMage', 'Time Magic'],
+  ['Time Mage', 'Time Magic'],
   ['Summoner', 'Summon Magic'],
   ['Thief', 'Steal'],
   ['Mediator', 'Talk Skill'],
