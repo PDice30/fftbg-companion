@@ -48,16 +48,16 @@ const Overlay = () => {
 
   // TODO - teams array could just be one to iterate through, and first half float left
   return (
-    <div className='bg-red-100 w-4/5 h-screen' style={{fontFamily: 'Altima', fontSize: '30px'}}>
+    <div className='w-4/5 h-screen' style={{fontFamily: 'Altima', fontSize: '30px'}}>
       {/* Will Need to find active teams */}
-      <div className='grid grid-cols-1 bg-blue-500 h-screen w-1/9 float-left'>
+      <div className='grid grid-cols-1 h-screen w-1/9 float-left'>
         {teamOne && teamOne.Units.map(unit => {
           return (
             <Portrait key={unit.Name} unit={unit} side={1}/>
           )
         })}
       </div>
-      <div className='grid grid-cols-1 bg-blue-500 h-screen w-1/9 float-right'>
+      <div className='grid grid-cols-1 h-screen w-1/9 float-right'>
         {teamTwo && teamTwo.Units.map(unit => {
           return (
             <Portrait key={unit.Name} unit={unit} side={2}/>
