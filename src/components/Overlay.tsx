@@ -1,4 +1,4 @@
-import { Team, Tournament, TournamentData } from "../models";
+import { Team, Tournament } from "../models";
 // import * as data from '../data/tournament.json';
 import { useEffect, useState } from "react";
 import { Portrait } from "./Portrait";
@@ -10,7 +10,7 @@ const Overlay = () => {
   const [storedId, setStoredId] = useState<number>(0);
 
   useEffect(() => {    
-
+    console.log(import.meta.env);
     // TODO : react-query
     // If Winners.length === 8: Tournament is over, display "waiting" and wait a set time to call again and show teams
     const fetchData = async () => {
@@ -37,6 +37,7 @@ const Overlay = () => {
         setTeamOne(tournament.Teams.red);
         setTeamTwo(tournament.Teams.blue);
       }
+      console.log(storedId);
     }
 
     setInterval(() => void fetchData(), 10000);

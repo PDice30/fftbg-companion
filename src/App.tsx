@@ -2,6 +2,8 @@ import Overlay from './components/Overlay';
 
 // TODO: Minimum Height and width of document, otherwise: Display a message they need to adjust
 const App = () => {
+
+  console.log(import.meta.env);
   // TODO: Use effect to track window changes?
   // Could also grab root Length/ Height?
   if (window.location.href !== 'http://localhost:8080/') {

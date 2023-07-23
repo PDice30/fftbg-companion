@@ -1,4 +1,4 @@
-import { LOCAL_ICON_URL } from "../constants";
+// import { LOCAL_ICON_URL } from "../constants";
 
 type PanelTextProps = {
   text?: string;
