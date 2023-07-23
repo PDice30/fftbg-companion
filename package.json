@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "npm run client:dev",
     "client:dev": "vite",
-    "server:dev": "ts-node-dev --project tsconfig.server.json ./server",
     "client:build": "tsc && vite build",
-    "server:build": "tsc --project tsconfig.server.json",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
