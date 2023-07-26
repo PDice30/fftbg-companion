@@ -1,4 +1,4 @@
-import { LOCAL_ICON_URL } from "../constants";
+import { BASE_IMAGE_URL } from "../constants";
 
 type IconProps = {
   name: string;
@@ -7,6 +7,6 @@ type IconProps = {
 
 export const Icon = (iconProps: IconProps) => {
   return (
-    <img className='h-1/6 relative p-2' src={LOCAL_ICON_URL + iconProps.folder + '/' + iconProps.name + '.png'}></img>
+    <img className='h-1/6 relative p-2' src={BASE_IMAGE_URL + iconProps.name + '.png'}></img>
   )
 }
