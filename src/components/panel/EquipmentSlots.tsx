@@ -1,12 +1,7 @@
 import { EQUIPMENT_SLOTS } from "../../constants"
-import { Unit } from "../../models"
 import { Icon } from "../global/Icon"
 
-type UnitProps = {
-  unit: Unit
-}
-
-export const EquipmentSlots = (props: UnitProps) => {
+export const EquipmentSlots = () => {
   return (
     <div className='h-full w-1/16 float-left'>
       <div className='h-1/10' />

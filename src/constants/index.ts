@@ -1,4 +1,4 @@
-import { Unit, TeamName } from "../models";
+import { TeamName } from "../models";
 
 export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
 export const BASE_ITEMS_URL = 'https://mustadio-images.s3.amazonaws.com/items/';

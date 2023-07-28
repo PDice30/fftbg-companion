@@ -1,10 +1,7 @@
 // import { useState } from "react"
-import { EQUIPMENT_ICONS, ABILITY_ICONS, ABILITY_MAP, BASE_IMAGE_URL } from "../constants"
 import { Unit } from "../models"
 import { Details } from "./panel/Details"
 import { Examine } from "./panel/Examine"
-import { Icon } from "./global/Icon"
-import { PanelText } from "./global/PanelText"
 import { EquipmentSlots } from "./panel/EquipmentSlots"
 import { EquipmentIcons } from "./panel/EquipmentIcons"
 import { EquipmentText } from "./panel/EquipmentText"
@@ -45,7 +42,7 @@ export const UnitPanel = (props: UnitPanelProps) => {
 
       <Details unit={props.unit} />
 
-      <EquipmentSlots unit={props.unit} />
+      <EquipmentSlots />
         
       <EquipmentIcons unit={props.unit} />
 

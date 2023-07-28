@@ -51,9 +51,12 @@ const panelLeft = 'grid grid-cols-1 h-screen w-1/9 float-left';
 const panelRight = 'grid grid-cols-1 h-screen w-1/9 float-right';
 
 const tailwindClasses =  {
-  overlay: import.meta.env.PROD ? overlay : overlay + ' bg-red-100',
-  panelLeft: import.meta.env.PROD ? panelLeft : panelLeft + ' bg-blue-400',
-  panelRight: import.meta.env.PROD ? panelRight : panelRight + ' bg-blue-400',
+  overlay: import.meta.env.PROD ? overlay : overlay,
+  panelLeft: import.meta.env.PROD ? panelLeft : panelLeft,
+  panelRight: import.meta.env.PROD ? panelRight : panelRight,
+  // overlay: import.meta.env.PROD ? overlay : overlay + ' bg-red-100',
+  // panelLeft: import.meta.env.PROD ? panelLeft : panelLeft + ' bg-blue-400',
+  // panelRight: import.meta.env.PROD ? panelRight : panelRight + ' bg-blue-400',
 
 }
 
