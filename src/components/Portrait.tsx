@@ -20,7 +20,6 @@ export const Portrait = (props: PortraitProps) => {
 
   return (
     <div
-      // className='border-4'
       onMouseEnter={() => {
         setIsShown(true);
       }}

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Icon } from "./Icon";
+import { Icon } from "../global/Icon";
 
 type ExamineProps = {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -14,14 +14,15 @@ export const Examine = (props: ExamineProps) => {
   }
 
   return (
-    <>
-      <div className='border-black rounded-md border-2 h-1/6 shadow-xl align-middle text-center'>
-        Text here! {/* ability name etc */}
+    <div className='h-full w-4/16 float-left text-2xl align-middle p-1'>
+      <div className='border-unit-panel border-2 h-1/6 align-middle text-center'>
+        Item/Ability Name
       </div>
-      <div className='border-black rounded-md border-2 h-3/4 shadow-xl mt-2'>
+      <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center'>
         { hasImage && props.component }
+          Item/Ability Description
       </div>
-    </>
+    </div>
    
   )
 }

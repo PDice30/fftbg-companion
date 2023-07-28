@@ -1,4 +1,4 @@
-import { Team, Tournament } from "../models";
+import { Team } from "../models";
 // import * as data from '../data/tournament.json';
 import { useEffect, useState } from "react";
 import { Portrait } from "./Portrait";
@@ -7,7 +7,7 @@ import getData from "../utils/dataHelper";
 const Overlay = () => {
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
-  const [storedId, setStoredId] = useState<number>(0);
+  // const [storedId, setStoredId] = useState<number>(0);
 
   useEffect(() => {    
     // TODO : react-query

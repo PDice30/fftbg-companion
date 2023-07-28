@@ -3,8 +3,8 @@ import { TeamName } from "../models";
 export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
 
 export const LOCAL_ICON_URL = './src/assets/images/icons/';
-export const EQUIPMENT_ICONS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];
-export const PLACEHOLDER_ITEM_ICONS: string[] = ['placeholderWeapon', 'placeholderShield', 'placeholderHelm', 'placeholderArmor', 'placeholderAccessory']
+export const EQUIPMENT_SLOTS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];
+export const EQUIPMENT_ICONS: string[] = ['placeholderWeapon', 'placeholderShield', 'placeholderHelm', 'placeholderArmor', 'placeholderAccessory']
 export const ABILITY_ICONS: string[] = ['active', 'active', 'react', 'support', 'move'];
 
 export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];

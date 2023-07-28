@@ -1,3 +1,6 @@
+const constants = require('./src/constants/index');
+const BASE_IMAGE_URL = constants['BASE_IMAGE_URL'];
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
@@ -16,11 +19,23 @@ export default {
         '1/10': '10%'
       },
       backgroundImage: {
-        'unit-panel': "url('./src/assets/images/bg.gif')",
-        'dark-unit-panel': "url('./src/assets/images/bg-dark.gif')",
+        'unit-panel': `url(${BASE_IMAGE_URL}bg.gif)`,
+        'dark-unit-panel':  `url(${BASE_IMAGE_URL}bg-dark.gif)`,
       },
       padding: {
         'top': '2px'
+      },
+      boxShadowColor: {
+        'unit-panel': 'rgb(32, 24, 15)'
+      },
+      boxShadow: {
+        'unit-panel': '3px 3px'
+      },
+      borderColor: {
+        'unit-panel': 'rgb(83, 78, 64)'
+      },
+      textColor: {
+        'unit-panel': 'rgb(51, 42, 30)'
       }
     },
   },
