@@ -6,7 +6,7 @@ type PanelTextProps = {
 
 export const PanelText = (props: PanelTextProps) => {
   return (
-    <div className='h-1/6 py-1'>
+    <div className='h-1/6 py-1 px-2'>
       {props.text}
     </div>
   )

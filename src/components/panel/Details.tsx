@@ -1,4 +1,4 @@
-import { Unit } from "../models"
+import { Unit } from "../../models"
 
 type UnitProps = {
   unit: Unit

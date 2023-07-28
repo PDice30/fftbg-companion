@@ -12,8 +12,15 @@ export default {
         '3/16': '18.75%',
         '4/16': '25%',
       },
+      height: {
+        '1/10': '10%'
+      },
       backgroundImage: {
-        'unit-panel': "url('./src/assets/images/bg.gif')"
+        'unit-panel': "url('./src/assets/images/bg.gif')",
+        'dark-unit-panel': "url('./src/assets/images/bg-dark.gif')",
+      },
+      padding: {
+        'top': '2px'
       }
     },
   },
