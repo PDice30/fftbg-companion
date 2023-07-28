@@ -18,9 +18,13 @@ export const EquipmentIcons = (props: UnitProps) => {
         <>
         </>
       :
-        EQUIPMENT_ICONS.map((icon, index) => 
-          <Icon key={index} name={icon} />
-        )
+        EQUIPMENT_ICONS.map((icon, index) => {
+          console.log(icon);
+          const equipmentName = props.unit[icon as keyof Unit] as string;
+          return(
+            <Icon key={index} name={equipmentName ? equipmentName : 'Reflect Ring'} item={true}/>
+          )
+        })
       }
   </div>
   )

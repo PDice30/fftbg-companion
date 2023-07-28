@@ -1,10 +1,11 @@
-import { TeamName } from "../models";
+import { Unit, TeamName } from "../models";
 
 export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
+export const BASE_ITEMS_URL = 'https://mustadio-images.s3.amazonaws.com/items/';
 
 export const LOCAL_ICON_URL = './src/assets/images/icons/';
 export const EQUIPMENT_SLOTS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];
-export const EQUIPMENT_ICONS: string[] = ['placeholderWeapon', 'placeholderShield', 'placeholderHelm', 'placeholderArmor', 'placeholderAccessory']
+export const EQUIPMENT_ICONS: string[] = ['Mainhand', 'Offhand', 'Head', 'Armor', 'Accessory'];
 export const ABILITY_ICONS: string[] = ['active', 'active', 'react', 'support', 'move'];
 
 export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];

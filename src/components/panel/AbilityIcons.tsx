@@ -1,4 +1,4 @@
-import { ABILITY_ICONS, BASE_IMAGE_URL } from "../../constants"
+import { ABILITY_ICONS, BASE_IMAGE_URL, BASE_ITEMS_URL } from "../../constants"
 import { Unit } from "../../models"
 import { Icon } from "../global/Icon"
 

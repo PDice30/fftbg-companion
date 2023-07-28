@@ -8,6 +8,7 @@ type UnitProps = {
 
 export const AbilityText = (props: UnitProps) => {
   const isMonster = props.unit.Gender === 'Monster';
+  
   return (
     <div className='h-full w-3/16 float-left text-2xl align-middle'>
       <div className='h-1/10' />

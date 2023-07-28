@@ -1,8 +1,9 @@
-import { BASE_IMAGE_URL } from "../../constants";
+import { BASE_IMAGE_URL, BASE_ITEMS_URL } from "../../constants";
 
 type IconProps = {
   name: string;
   padding?: string;
+  item?: boolean;
 }
 
 export const Icon = (iconProps: IconProps) => {
@@ -10,6 +11,6 @@ export const Icon = (iconProps: IconProps) => {
   const style = `h-1/6 items-center ${padding}`;
 
   return (
-    <img className={style} src={BASE_IMAGE_URL + iconProps.name + '.png'}></img>
+    <img className={style} src={(iconProps.item ? BASE_ITEMS_URL : BASE_IMAGE_URL) + iconProps.name + '.png'}></img>
   )
 }
