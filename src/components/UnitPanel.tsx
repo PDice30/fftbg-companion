@@ -44,7 +44,7 @@ export const UnitPanel = (props: UnitPanelProps) => {
 
       <EquipmentSlots />
         
-      <EquipmentIcons unit={props.unit} />
+      <EquipmentIcons />
 
       <EquipmentText unit={props.unit} />
         

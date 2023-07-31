@@ -1,7 +1,21 @@
+import { createContext, useState } from 'react';
 import Overlay from './components/Overlay';
+import defaultUnit from './data/defaultUnit';
+import UnitContextType from './contexts/UnitContext';
+import React from 'react';
+import { Unit } from './models';
 
 // TODO: Minimum Height and width of document, otherwise: Display a message they need to adjust
+
+export const UnitContext = createContext<UnitContextType>({
+  unit: defaultUnit,
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return, @typescript-eslint/no-empty-function
+  setUnit: () => {},
+});
+
 const App = () => {
+
+  const [unit, setUnit] = useState(defaultUnit);
 
   console.log(import.meta.env);
   // // TODO: Use effect to track window changes?
@@ -31,8 +45,11 @@ const App = () => {
   
 
   return (
-    <Overlay />
+    <UnitContext.Provider value={{ unit, setUnit }}>
+      <Overlay />
+    </UnitContext.Provider>
+    
   )
 }
 
-export default App
+export default App;
