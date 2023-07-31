@@ -7,33 +7,31 @@ type PanelContextType = {
   unit: Unit,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setUnit: Function,
-  examineObject: ExamineProps,
+  examineText: string,
   // eslint-disable-next-line @typescript-eslint/ban-types
-  setExamineObject: Function,
+  setExamineText: Function,
 }
 
 export const PanelContext = createContext<PanelContextType>({
   unit: defaultUnit,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setUnit: () => {},
-  examineObject: {
-    name: '', details: ''
-  },
+  examineText: '',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setExamineObject: () => {},
+  setExamineText: () => {},
 });
 
 export const PanelProvider = (props: React.PropsWithChildren) => {
   const [unit, setUnit] = useState<Unit>(defaultUnit);
-  const [examineObject, setExamineObject] = useState({name: '', details: ''});
+  const [examineText, setExamineText] = useState('');
 
   return (
     <PanelContext.Provider
       value={{ 
         unit: unit, 
         setUnit: setUnit, 
-        examineObject: examineObject,
-        setExamineObject: setExamineObject 
+        examineText: examineText,
+        setExamineText: setExamineText 
       }}
     >
       {props.children}

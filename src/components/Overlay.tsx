@@ -3,6 +3,7 @@ import { Team } from "../models";
 import { useEffect, useState } from "react";
 import { Portrait } from "./Portrait";
 import getData from "../utils/dataHelper";
+import getTooltips from "../utils/tooltips";
 
 const Overlay = () => {
   const [teamOne, setTeamOne] = useState<Team>();
@@ -18,7 +19,14 @@ const Overlay = () => {
       setTeamTwo(data[1]);
     }
 
+    const getTips = async () => {
+      const data = await getTooltips();
+      console.log(data);
+    }
+
     setInterval(() => void fetchData(), 10000);
+
+    void getTips();
     void fetchData(); // TODO
   }, []);
   

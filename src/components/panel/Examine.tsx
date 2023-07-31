@@ -12,18 +12,18 @@ export type ExamineProps = {
 export const Examine = () => {
   const [hasImage, setHasImage] = useState(false);
 
-  const { examineObject } = useContext(PanelContext);
+  const { examineText } = useContext(PanelContext);
 
-  if (typeof examineObject === typeof Icon) {
-    setHasImage(true);
-  }
+  // if (typeof examineObject === typeof Icon) {
+  //   setHasImage(true);
+  // }
 
   return (
     <>
-    { examineObject.name !== '' && 
+    { examineText !== '' && 
       <div className='h-full w-4/16 float-left text-2xl align-middle p-1'>
         <div className='border-unit-panel border-2 h-1/6 align-middle text-center'>
-          {examineObject.name}
+          {examineText}
         </div>
         <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center'>
           { hasImage }
