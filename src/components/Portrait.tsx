@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Unit } from "../models"
 import { UnitPanel } from "./UnitPanel"
+import { PanelContext } from "../contexts/PanelContext"
 
 type PortraitProps = {
   key: string,
@@ -15,23 +16,23 @@ type PortraitProps = {
  * @returns 
  */
 export const Portrait = (props: PortraitProps) => {
+  const { setUnit } = useContext(PanelContext)
   const [isShown, setIsShown] = useState(false);
-  const unit = props.unit;
 
   return (
     <div
       onMouseEnter={() => {
         setIsShown(true);
+        setUnit(props.unit);
       }}
       onMouseLeave={() => {
         setIsShown(false);
       }}>
         <div>
           { isShown && 
-            <UnitPanel unit={unit} side={props.side} />
+            <UnitPanel unit={props.unit} side={props.side} />
           }
         </div>
     </div>
-    
   )
 }

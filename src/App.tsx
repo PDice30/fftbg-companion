@@ -1,4 +1,5 @@
 import Overlay from './components/Overlay';
+import { PanelProvider } from './contexts/PanelContext';
 
 // TODO: Minimum Height and width of document, otherwise: Display a message they need to adjust
 const App = () => {
@@ -31,7 +32,10 @@ const App = () => {
   
 
   return (
-    <Overlay />
+    <PanelProvider>
+      <Overlay />
+    </PanelProvider>
+    
   )
 }
 

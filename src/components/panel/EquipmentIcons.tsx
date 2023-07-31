@@ -1,13 +1,12 @@
+import { useContext } from "react"
 import { BASE_IMAGE_URL, EQUIPMENT_ICONS } from "../../constants"
 import { Unit } from "../../models"
 import { Icon } from "../global/Icon"
+import { PanelContext } from "../../contexts/PanelContext"
 
-type UnitProps = {
-  unit: Unit
-}
-
-export const EquipmentIcons = (props: UnitProps) => {
-  const isMonster = props.unit.Gender === 'Monster';
+export const EquipmentIcons = () => {
+  const { unit } = useContext(PanelContext);
+  const isMonster = unit.Gender === 'Monster';
 
   return (
     <div className='h-full w-1/16 float-left bg-dark-unit-panel'>
@@ -19,8 +18,7 @@ export const EquipmentIcons = (props: UnitProps) => {
         </>
       :
         EQUIPMENT_ICONS.map((icon, index) => {
-          console.log(icon);
-          const equipmentName = props.unit[icon as keyof Unit] as string;
+          const equipmentName = unit[icon as keyof Unit] as string;
           if (equipmentName) {
             return(
               <Icon key={index} name={equipmentName} item={true}/>
