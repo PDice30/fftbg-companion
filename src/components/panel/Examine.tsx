@@ -30,7 +30,7 @@ export const Examine = () => {
   return (
     <>
     { examineText !== '' && 
-      <div className='h-full w-4/16 float-left text-2xl align-middle p-1'>
+      <div className='h-full w-4/16 left float-left text-2xl align-middle p-1'>
         <div className='text-3xl border-unit-panel border-2 h-1/6 align-middle text-center'>
           {examineText}
         </div>
