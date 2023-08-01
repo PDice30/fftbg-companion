@@ -34,9 +34,9 @@ export const AbilityText = () => {
         <>
           <PanelText text={ABILITY_MAP.get(unit.Class)} toolTipType='ClassSkills' /> 
           <PanelText text={unit.ActionSkill} toolTipType='ExtraSkills' />
-          <PanelText text={unit.ReactionSkill} toolTipType='Ability' />
-          <PanelText text={unit.SupportSkill} toolTipType='Ability' />
-          <PanelText text={unit.MoveSkill} toolTipType='Ability' />
+          <PanelText text={unit.ReactionSkill} toolTipType='Ability' canBeNotable={true} />
+          <PanelText text={unit.SupportSkill} toolTipType='Ability' canBeNotable={true} />
+          <PanelText text={unit.MoveSkill} toolTipType='Ability' canBeNotable={true} />
         </>
       }
     </div>
