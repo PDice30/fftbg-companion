@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
@@ -21,5 +22,5 @@
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true
   },
-  "include": ["./src"]
+  // "include": ["./src"]
 }
