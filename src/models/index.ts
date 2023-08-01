@@ -60,10 +60,18 @@ export type Unit = {
 export type TeamName = 'red' | 'blue' | 'green' | 'yellow' | 'white' | 'black' | 'purple' | 'brown' | 'champion'; 
 
 export type ToolTips = {
-  Item: Map<string, string>,
-  Ability: Map<string, string>,
-  UserSkill: Map<string, string>,
-  Zodiac: Map<string, string>,
-  Class: Map<string, string>,
-  MonsterSkills: Map<string, string[]>
+  Item?: Map<string, string>,
+  Ability?: Map<string, string>,
+  UserSkill?: Map<string, string>,
+  Zodiac?: Map<string, string>,
+  Class?: Map<string, string>,
+  MonsterSkills?: Map<string, string[]>
 }
+
+export type ExamineDetails = {
+  name: string,
+  type: ToolTipType,
+  // component?: any;
+}
+
+export type ToolTipType = 'Ability' | 'Class' | 'Item' | 'MonsterSkills' | 'UserSkill' | 'Zodiac' | 'ClassSkills' | 'ExtraSkills'

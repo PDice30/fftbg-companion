@@ -1,7 +1,6 @@
 import { createContext, useState } from "react";
-import { Unit } from "../models";
+import { ToolTipType, ToolTips, Unit } from "../models";
 import defaultUnit from "../data/defaultUnit";
-import { ExamineProps } from "../components/panel/Examine";
 
 type PanelContextType = {
   unit: Unit,
@@ -10,6 +9,12 @@ type PanelContextType = {
   examineText: string,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setExamineText: Function,
+  toolTips: ToolTips,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setToolTips: Function,
+  toolTipType: ToolTipType,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setToolTipType: Function
 }
 
 export const PanelContext = createContext<PanelContextType>({
@@ -19,11 +24,19 @@ export const PanelContext = createContext<PanelContextType>({
   examineText: '',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setExamineText: () => {},
+  toolTips: { },
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setToolTips: () => {},
+  toolTipType: 'Ability',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setToolTipType: () => {},
 });
 
 export const PanelProvider = (props: React.PropsWithChildren) => {
   const [unit, setUnit] = useState<Unit>(defaultUnit);
   const [examineText, setExamineText] = useState('');
+  const [toolTips, setToolTips] = useState<ToolTips>({})
+  const [toolTipType, setToolTipType] = useState<ToolTipType>('Ability');
 
   return (
     <PanelContext.Provider
@@ -31,7 +44,11 @@ export const PanelProvider = (props: React.PropsWithChildren) => {
         unit: unit, 
         setUnit: setUnit, 
         examineText: examineText,
-        setExamineText: setExamineText 
+        setExamineText: setExamineText,
+        toolTips: toolTips,
+        setToolTips: setToolTips,
+        toolTipType: toolTipType,
+        setToolTipType: setToolTipType,
       }}
     >
       {props.children}

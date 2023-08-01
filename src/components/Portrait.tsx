@@ -16,7 +16,7 @@ type PortraitProps = {
  * @returns 
  */
 export const Portrait = (props: PortraitProps) => {
-  const { setUnit } = useContext(PanelContext)
+  const { setUnit, setExamineText } = useContext(PanelContext)
   const [isShown, setIsShown] = useState(false);
 
   return (
@@ -27,6 +27,7 @@ export const Portrait = (props: PortraitProps) => {
       }}
       onMouseLeave={() => {
         setIsShown(false);
+        setExamineText('');
       }}>
         <div>
           { isShown && 

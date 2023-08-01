@@ -15,11 +15,11 @@ export const EquipmentText = (props: UnitProps) => {
         <></>
       :
         <>
-          <PanelText text={props.unit.Mainhand} /> 
-          <PanelText text={props.unit.Offhand} />
-          <PanelText text={props.unit.Head} />
-          <PanelText text={props.unit.Armor} />
-          <PanelText text={props.unit.Accessory} />
+          <PanelText text={props.unit.Mainhand} toolTipType='Item' /> 
+          <PanelText text={props.unit.Offhand} toolTipType='Item' />
+          <PanelText text={props.unit.Head} toolTipType='Item' />
+          <PanelText text={props.unit.Armor} toolTipType='Item' />
+          <PanelText text={props.unit.Accessory} toolTipType='Item' />
         </>
       }
       

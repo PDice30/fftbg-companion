@@ -1,11 +1,13 @@
 import { Team } from "../models";
 // import * as data from '../data/tournament.json';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Portrait } from "./Portrait";
 import getData from "../utils/dataHelper";
 import getTooltips from "../utils/tooltips";
+import { PanelContext } from "../contexts/PanelContext";
 
 const Overlay = () => {
+  const { setToolTips } = useContext(PanelContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -21,6 +23,7 @@ const Overlay = () => {
 
     const getTips = async () => {
       const data = await getTooltips();
+      setToolTips(data);
       console.log(data);
     }
 
