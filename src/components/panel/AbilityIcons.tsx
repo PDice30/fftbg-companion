@@ -1,13 +1,21 @@
+import { useContext } from "react"
 import { ABILITY_ICONS, BASE_IMAGE_URL } from "../../constants"
-import { Unit } from "../../models"
 import { Icon } from "../global/Icon"
+import { PanelContext } from "../../contexts/PanelContext"
 
-type UnitProps = {
-  unit: Unit
-}
+export const AbilityIcons = () => {
+  const { unit, toolTips } = useContext(PanelContext);
+  
+  // TODO: cleanup undefined type logic
+  const isMonster = unit.Gender === 'Monster';
+  let monsterAbilities: string[] | undefined = [];
 
-export const AbilityIcons = (props: UnitProps) => {
-  const isMonster = props.unit.Gender === 'Monster';
+  if (isMonster && toolTips.MonsterSkills) {
+    monsterAbilities = toolTips.MonsterSkills?.get(unit.Class);
+    if (monsterAbilities && monsterAbilities.length > 5) {
+      monsterAbilities = monsterAbilities?.slice(0, 5);
+    }
+  }
 
   return (
     <div className='h-full w-1/16 float-left bg-dark-unit-panel'>
@@ -15,19 +23,19 @@ export const AbilityIcons = (props: UnitProps) => {
         <img src={BASE_IMAGE_URL + 'ability.png'} className='absolute'/>
       </div>
 
-      {/* TODO: Will need to lookup a data dump for monster abilities by their 'class' */}
-
-      { isMonster ? 
-        <>
-          <Icon name={'monster-ability'} />
-          <Icon name={'monster-ability'} />
-          <Icon name={'monster-ability'} />
-        </>
-
+      { 
+      (isMonster && monsterAbilities?.length) ? 
+        monsterAbilities.map((_, index) => {
+          return (
+            <Icon key={index} name='monster-ability' />
+          )
+        })
       :
-        ABILITY_ICONS.map((icon, index) => 
-          <Icon key={index} name={icon} />
-        )
+        ABILITY_ICONS.map((icon, index) => {
+          return (
+            <Icon key={index} name={icon} />
+          )
+        })
       }
     </div>
   )

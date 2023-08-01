@@ -1,12 +1,11 @@
+import { useContext } from "react"
 import { Unit } from "../../models"
 import { PanelText } from "../global/PanelText"
+import { PanelContext } from "../../contexts/PanelContext"
 
-type UnitProps = {
-  unit: Unit
-}
-
-export const EquipmentText = (props: UnitProps) => {
-  const isMonster = props.unit.Gender === 'Monster';
+export const EquipmentText = () => {
+  const { unit } = useContext(PanelContext);
+  const isMonster = unit.Gender === 'Monster';
   
   return (
     <div className='h-full w-3/16 float-left text-2xl align-middle'>
@@ -15,11 +14,11 @@ export const EquipmentText = (props: UnitProps) => {
         <></>
       :
         <>
-          <PanelText text={props.unit.Mainhand} toolTipType='Item' /> 
-          <PanelText text={props.unit.Offhand} toolTipType='Item' />
-          <PanelText text={props.unit.Head} toolTipType='Item' />
-          <PanelText text={props.unit.Armor} toolTipType='Item' />
-          <PanelText text={props.unit.Accessory} toolTipType='Item' />
+          <PanelText text={unit.Mainhand} toolTipType='Item' /> 
+          <PanelText text={unit.Offhand} toolTipType='Item' />
+          <PanelText text={unit.Head} toolTipType='Item' />
+          <PanelText text={unit.Armor} toolTipType='Item' />
+          <PanelText text={unit.Accessory} toolTipType='Item' />
         </>
       }
       

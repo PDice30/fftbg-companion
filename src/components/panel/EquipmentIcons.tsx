@@ -5,7 +5,7 @@ import { Icon } from "../global/Icon"
 import { PanelContext } from "../../contexts/PanelContext"
 
 export const EquipmentIcons = () => {
-  const { unit } = useContext(PanelContext);
+  const { unit, setExamineText } = useContext(PanelContext);
   const isMonster = unit.Gender === 'Monster';
 
   return (

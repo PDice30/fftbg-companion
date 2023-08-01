@@ -20,11 +20,7 @@ type UnitPanelProps = {
 
 // TODO: Multiple borders with different colors
 
-// TODO: Just use a Unit Context lol
-
 export const UnitPanel = (props: UnitPanelProps) => {
-  // const [examine, setExamine] = useState<any>();
-
   // TODO: refactor the style
 
   return (
@@ -40,17 +36,17 @@ export const UnitPanel = (props: UnitPanelProps) => {
                     ' 
         style={props.side === 1 ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A' } : {left: '30.5%', textShadow: '2px 2px 2px #857C6A' }}>
 
-      <Details unit={props.unit} />
+      <Details />
 
       <EquipmentSlots />
         
       <EquipmentIcons />
       
-      <EquipmentText unit={props.unit} />
+      <EquipmentText />
         
-      <AbilityIcons unit={props.unit} />
+      <AbilityIcons />
 
-      <AbilityText unit={props.unit} />
+      <AbilityText />
 
       <Examine />
     </div>
