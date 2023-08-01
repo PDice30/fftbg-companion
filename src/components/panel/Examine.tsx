@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
-import { Icon } from "../global/Icon";
+import { useContext } from "react";
 import { PanelContext } from "../../contexts/PanelContext";
 import { ToolTips } from "../../models";
 
 export const Examine = () => {
-  const [hasImage, setHasImage] = useState(false);
+  // const [hasImage, setHasImage] = useState(false);
 
   const { examineText, toolTips, toolTipType, unit } = useContext(PanelContext);
 
@@ -32,11 +31,11 @@ export const Examine = () => {
     <>
     { examineText !== '' && 
       <div className='h-full w-4/16 float-left text-2xl align-middle p-1'>
-        <div className='border-unit-panel border-2 h-1/6 align-middle text-center'>
+        <div className='text-3xl border-unit-panel border-2 h-1/6 align-middle text-center'>
           {examineText}
         </div>
         <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center'>
-          { hasImage }
+          {/* { hasImage } */}
           { 
             detailDisplay
           }

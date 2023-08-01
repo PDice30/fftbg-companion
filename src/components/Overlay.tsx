@@ -24,7 +24,7 @@ const Overlay = () => {
     const getTips = async () => {
       const data = await getTooltips();
       setToolTips(data);
-      console.log(data);
+      // console.log(data);
     }
 
     setInterval(() => void fetchData(), 10000);

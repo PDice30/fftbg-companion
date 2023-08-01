@@ -16,11 +16,11 @@ const determineMatchup = (winners: string[]) => {
 
   // TODO: logic is very scuffed
   if (matchNumber < 6) {
-    console.log(`Winners: ${winners.toString()}`)
+    // console.log(`Winners: ${winners.toString()}`)
     const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[matchNumber === 4 ? 0 : 2])?.[0];
-    console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
+    // console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
     const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[matchNumber === 4 ? 1 : 3])?.[1];
-    console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
+    // console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
     if (winnerOne && winnerTwo) {
       return MATCHUPS[matchNumber].find(([teamOne, teamTwo]) => teamOne === winnerOne && teamTwo === winnerTwo);
     }
@@ -28,11 +28,11 @@ const determineMatchup = (winners: string[]) => {
   }
 
   if (matchNumber < 7) {
-    console.log(`Winners: ${winners.toString()}`)
+    // console.log(`Winners: ${winners.toString()}`)
     const winnerOne = MATCHUPS[matchNumber].find(matchup => matchup[0] === winners[4])?.[0];
-    console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
+    // console.log(`WinnerOne: ${winnerOne ? winnerOne : ''}`);
     const winnerTwo = MATCHUPS[matchNumber].find(matchup => matchup[1] === winners[5])?.[1];
-    console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
+    // console.log(`WinnerTwo: ${winnerTwo ? winnerTwo : ''}`);
     // just return a new array here
     if (winnerOne && winnerTwo) {
       return MATCHUPS[matchNumber].find(([teamOne, teamTwo]) => teamOne === winnerOne && teamTwo === winnerTwo);
@@ -40,9 +40,9 @@ const determineMatchup = (winners: string[]) => {
     return DEFAULT_MATCHUP;
   }
 
-  console.log(winners[matchNumber - 1]);
+  // console.log(winners[matchNumber - 1]);
   const winner = TEAMS.find(team => team.toString() === winners[matchNumber - 1]);
-  console.log(`To face champ: ${winner ? winner : ''}`);
+  // console.log(`To face champ: ${winner ? winner : ''}`);
 
   // Breaks on champion screen
   if (winner) {
