@@ -9,6 +9,7 @@ export const EQUIPMENT_ICONS: string[] = ['Mainhand', 'Offhand', 'Head', 'Armor'
 export const ABILITY_ICONS: string[] = ['active', 'active', 'react', 'support', 'move'];
 
 export const TEAMS: TeamName[] = ['red', 'blue', 'green', 'yellow', 'white', 'black', 'purple', 'brown', 'champion'];
+// Based on Mustad.io: https://github.com/SirBraneDamuj/mustadio/blob/master/src/data/matchups.js
 export const MATCHUPS: TeamName[][][] = [
   // ROUND 1
   [

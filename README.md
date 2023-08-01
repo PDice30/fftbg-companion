@@ -10,8 +10,9 @@ From the channels' about page: FFTBattleground is an automated stream of continu
 
 ## FFTBG Companion offers viewers:
 * Real-time data about the current 8 fighters.
-* A light-weight, clean and responsive UI.
+* A light-weight, clean, and responsive UI.
 * An alternative to text responses from chat commands.
+* Many more features and fun animations coming soon.
 
 ## FFTBG Companion would not be possible without:
 * **TheKillerNacho**: Operator of the FFTBattleground Twitch channel.

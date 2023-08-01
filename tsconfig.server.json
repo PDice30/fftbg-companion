@@ -3,7 +3,6 @@
   "compilerOptions": {
     "outDir": "dist",
     "module": "commonjs",
-    // "noEmit": true
   },
   "include": ["./server"],
   "exclude": ["./src"]

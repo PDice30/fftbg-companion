@@ -3,11 +3,13 @@ import Overlay from './components/Overlay';
 import { PanelProvider } from './contexts/PanelContext';
 import { useWindowSize } from 'usehooks-ts';
 
-// TODO: Minimum Height and width of document, otherwise: Display a message they need to adjust
+
+/**
+ * TODO: Raidboss icon
+ * TODO: Bold(?) abilities or items that are Notable
+ */
 const App = () => {
   const { width, height } = useWindowSize();
-
-  console.log(`Window Width: ${width}, Window Height: ${height}`);
   
   if (width < 1420 || height < 800) {
     return (
@@ -19,8 +21,7 @@ const App = () => {
     <PanelProvider>
       <Overlay />
     </PanelProvider>
-    
   )
 }
 
-export default App
+export default App;

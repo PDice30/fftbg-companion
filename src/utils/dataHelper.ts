@@ -8,7 +8,6 @@ import determineMatchup from "./matchup";
 const getData = async (): Promise<[Team, Team]> => {
   const id = (await (await fetch('https://fftbg.com/api/tournaments?limit=1')).json() as Tournament[])[0].ID.toString();
   // console.log(id);
-  // TODO : Fix linting
   const tournament = (await (await fetch(`https://fftbg.com/api/tournament/${id}`)).json() as Tournament);
 
   const matchup = determineMatchup(tournament.Winners);
