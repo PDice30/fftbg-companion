@@ -9,12 +9,15 @@ type IconProps = {
 }
 
 export const Icon = (iconProps: IconProps) => {
-  const { setExamineText } = useContext(PanelContext);
+  const { setExamineText, setToolTipType } = useContext(PanelContext);
   const padding = iconProps.padding ? iconProps.padding : 'p-1';
   const style = `h-1/6 items-center ${padding}`;
 
   const handleClick = () => {
-    if (iconProps.item) setExamineText(iconProps.name);
+    if (iconProps.item) {
+      setExamineText(iconProps.name);
+      setToolTipType('Item');
+    }
   }
 
   return (
