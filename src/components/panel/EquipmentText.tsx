@@ -1,5 +1,4 @@
 import { useContext } from "react"
-import { Unit } from "../../models"
 import { PanelText } from "../global/PanelText"
 import { PanelContext } from "../../contexts/PanelContext"
 
