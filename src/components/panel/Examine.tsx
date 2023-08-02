@@ -5,7 +5,7 @@ import { NOTABLES } from "../../constants";
 
 export const Examine = () => {
   const { examineText, toolTips, toolTipType, unit } = useContext(PanelContext);
-  const placeHolderText = '<- Click on an Item or Ability to find out more info'
+  const placeHolderText = '<- Click on an Item or Ability to find out more info';
 
   let string;
   let detailDisplay;
@@ -41,8 +41,8 @@ export const Examine = () => {
 
   return (
     <>
-      <div className='h-full w-4/16 left float-left text-2xl align-middle p-1'>
-        { examineText !== '' ?
+      { examineText !== '' ?
+        <div className='h-full w-4/16 left float-left text-2xl align-middle p-1'>
           <>
             <div className='text-3xl border-unit-panel border-2 h-1/6 align-middle text-center'>
               { examineText }
@@ -51,14 +51,18 @@ export const Examine = () => {
               { detailDisplay }
             </div>
           </>
-       :
-          <div className="border-2 border-unit-panel">
-            <div className='h-3/4'></div>
-            <div className='h-1/4 p-2'>{placeHolderText}</div>
+        </div>
+      :
+        <>
+          <div className='h-1/4'></div>
+          <div className='h-1/2'>
+            <div className='examineAnimation text-2xl align-middle'>
+              {placeHolderText}
+            </div>
+          <div className='h-1/4'></div>
           </div>
-        }
-      </div>
+        </>
+      }
     </>
-   
   )
 }

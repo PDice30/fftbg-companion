@@ -10,3 +10,17 @@
 div {
   font-family: 'Altima';
 }
+
+.examineAnimation {
+  animation: 1s infinite alternate leftRight;
+}
+
+@keyframes leftRight {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 10px;
+  }
+}
