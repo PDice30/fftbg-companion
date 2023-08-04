@@ -10,6 +10,8 @@ export const Examine = () => {
   let string;
   let detailDisplay;
 
+  // TODO: strip examine text of * characters for special monster abilities
+
   switch (toolTipType) {
     case 'ClassSkills':
       detailDisplay = unit.ClassSkills.map((skill, index) => {
