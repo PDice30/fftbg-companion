@@ -26,7 +26,7 @@ export const Examine = () => {
         let style = 'inline-block';
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
-          <span className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</span>
+          <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</p>
         )
       });
       break;
