@@ -13,9 +13,6 @@ type UnitPanelProps = {
   unit: Unit
 }
 
-// TODO: the twitch player maintains a minimum aspect ratio
-// Even it goes really small it still looks 16:9
-
 // TODO: All text needs sized based on aspect ratio
 
 // TODO: Multiple borders with different colors

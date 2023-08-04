@@ -8,7 +8,7 @@ export const Details = () => {
   let nameStyle = 'h-1/6 text-3xl';
 
   if (unit.RaidBoss) {
-    name += ' [!]';
+    name = ('[!] ' + name).slice(0, 12);
     nameStyle += ' font-extrabold';
   }
 

@@ -10,15 +10,14 @@ export const Examine = () => {
   let string;
   let detailDisplay;
 
-  // TODO: strip examine text of * characters for special monster abilities
-
   switch (toolTipType) {
     case 'ClassSkills':
       detailDisplay = unit.ClassSkills.map((skill, index) => {
+        console.log(index);
         let style = 'inline-block';
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
-          <p className={style} key={index}>{skill + ',  '}</p>
+          <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ClassSkills.length) ? '' : ', ')}</p>
         )
       });
       break;
@@ -27,7 +26,7 @@ export const Examine = () => {
         let style = 'inline-block';
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
-          <p className={style} key={index}>{skill + ',  '}</p>
+          <span className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</span>
         )
       });
       break;
@@ -58,7 +57,7 @@ export const Examine = () => {
         <>
           <div className='h-1/4'></div>
           <div className='h-1/2'>
-            <div className='examineAnimation text-2xl align-middle'>
+            <div className='text-2xl align-middle'>
               {placeHolderText}
             </div>
           <div className='h-1/4'></div>

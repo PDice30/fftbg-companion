@@ -11,7 +11,7 @@ const getData = async (): Promise<[Team, Team]> => {
   const tournament = (await (await fetch(`https://fftbg.com/api/tournament/${id}`)).json() as Tournament);
 
   const matchup = determineMatchup(tournament.Winners);
-  // console.log(matchup);
+  console.log(matchup);
   if (matchup) return [tournament.Teams[`${matchup[0]}`], tournament.Teams[`${matchup[1]}`]];
   return [tournament.Teams.red, tournament.Teams.blue];
 }
