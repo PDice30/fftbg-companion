@@ -26,14 +26,14 @@ export type Teams = {
   purple: Team,
   red: Team,
   white: Team,
-  yellow: Team
+  yellow: Team,
 }
 
 export type Team = {
   Player: string,
   Name: string,
   Palettes: string,
-  Units: Unit[]
+  Units: Unit[],
 }
 
 export type Unit = {
@@ -54,7 +54,7 @@ export type Unit = {
   Accessory: string,
   ClassSkills: string[],
   ExtraSkills: string[],
-  RaidBoss: boolean
+  RaidBoss: boolean,
 }
 
 export type TeamName = 'red' | 'blue' | 'green' | 'yellow' | 'white' | 'black' | 'purple' | 'brown' | 'champion'; 
@@ -65,13 +65,12 @@ export type ToolTips = {
   UserSkill?: Map<string, string>,
   Zodiac?: Map<string, string>,
   Class?: Map<string, string>,
-  MonsterSkills?: Map<string, string[]>
+  MonsterSkills?: Map<string, string[]>,
 }
 
 export type ExamineDetails = {
   name: string,
   type: ToolTipType,
-  // component?: any;
 }
 
 export type ToolTipType = 'Ability' | 'Class' | 'Item' | 'MonsterSkills' | 'UserSkill' | 'Zodiac' | 'ClassSkills' | 'ExtraSkills'
