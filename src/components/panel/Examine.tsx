@@ -15,6 +15,7 @@ export const Examine = () => {
       detailDisplay = unit.ClassSkills.map((skill, index) => {
         console.log(index);
         let style = 'inline-block';
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
           <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ClassSkills.length) ? '' : ', ')}</p>
@@ -24,6 +25,7 @@ export const Examine = () => {
     case 'ExtraSkills':
       detailDisplay = unit.ExtraSkills.map((skill, index) => {
         let style = 'inline-block';
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
           <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</p>
