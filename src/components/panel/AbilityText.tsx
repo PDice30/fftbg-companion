@@ -17,8 +17,6 @@ export const AbilityText = () => {
     }
   }
 
-
-
   return (
     <div className='h-full w-3/16 float-left text-2xl align-middle'>
       <div className='h-1/10' />

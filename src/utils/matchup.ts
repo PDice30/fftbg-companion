@@ -4,6 +4,7 @@ import { TeamName } from "../models";
 // Based on Mustad.io: https://github.com/SirBraneDamuj/mustadio/blob/master/src/data/matchups.js
 const DEFAULT_MATCHUP: TeamName[] = ['red', 'blue'];
 
+// TODO: Honestly the whole Matchup const could be removed and just match the text from winners[]
 const determineMatchup = (winners: string[]) => {
   const matchNumber = winners.length;
 
