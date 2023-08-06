@@ -22,5 +22,4 @@
     "forceConsistentCasingInFileNames": true,
     "allowImportingTsExtensions": true
   },
-  // "include": ["./src"]
 }
