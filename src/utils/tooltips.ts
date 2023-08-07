@@ -1,8 +1,9 @@
+import { BASE_API_URL } from '../constants';
 import { ToolTips } from "../models";
 
 const getTooltips = async (): Promise<ToolTips> => {
 
-  const response = (await (await fetch('https://fftbg.com/api/tips')).json()) as ToolTips;
+  const response = (await (await fetch(`${BASE_API_URL}tips`)).json()) as ToolTips;
 
   // TODO: Exact map type probably isn't necessary
   if (!response.Ability || !response.Class || !response.Item || !response.MonsterSkills || !response.UserSkill || !response.Zodiac) return {}; 
