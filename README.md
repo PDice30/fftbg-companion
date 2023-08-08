@@ -17,7 +17,11 @@ From the channels' about page: FFTBattleground is an automated stream of continu
 ## FFTBG Companion would not be possible without:
 * **TheKillerNacho**: Operator of the FFTBattleground Twitch channel.
 * **SirBraneDamuj**: Creator of mustad.io and allowing me the use of their AWS S3 asset hosting.  Also general inspiration from mustad.io (Great site, check it out!).
-
+* **FinneyBussa**: (github.com/bnowak008) Brilliant web dev and all around good dude.  Assisted in back end proxy hosting and debugging.
 For any feedback, feel free to email me @ pdice30@gmail.com or message me on Discord (pdice30).
 
 Special thanks goes to Dice_the_Vice and all the Viceroys!
+
+## Build Notes (for me, or you, I guess)
+Two lines of the index.html file in the dist output need changing.  Both from '/assets/' to './assets/'.
+The asset link to the Altima.ttf file in the build is incorrect for Twitch asset hosting and needs to be just 'url(./Altima-21192d5e.ttf)' (the 'assets' folder is removed)
