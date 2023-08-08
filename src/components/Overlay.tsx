@@ -31,6 +31,7 @@ const Overlay = () => {
 
     void getTips();
     void fetchData(); // TODO
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
 
