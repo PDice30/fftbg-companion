@@ -1,4 +1,6 @@
-{
+import { Tournament } from "models";
+
+const defaultTournament: Tournament = {
   "Type": "main",
   "ID": 1581360864550,
   "LastMod": "2020-02-10T14:02:00-05:00",
@@ -1342,3 +1344,5 @@
     "ldskinny"
   ]
 }
+
+export default defaultTournament;
