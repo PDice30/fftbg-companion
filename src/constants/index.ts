@@ -1,7 +1,7 @@
 import { TeamName } from "../models";
 
 // export const BASE_API_URL = 'https://fftbg.com/api/';
-export const BASE_API_URL = 'https://6380-2600-1700-9272-a10-00-42.ngrok-free.app/api/';
+export const BASE_API_URL = 'https://fftbg.dev-bn.com/api/';
 export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
 export const BASE_ITEMS_URL = 'https://mustadio-images.s3.amazonaws.com/items/';
 
