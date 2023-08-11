@@ -10,28 +10,22 @@ import { AbilityText } from "./panel/AbilityText"
 
 type UnitPanelProps = {
   side: number,
-  unit: Unit
+  unit: Unit,
+  index: number // If 0, bump down. If 3, bump up.
 }
 
 // TODO: All text needs sized based on aspect ratio
-
 // TODO: Multiple borders with different colors
 
 export const UnitPanel = (props: UnitPanelProps) => {
   // TODO: refactor the style
 
+  let className = 'w-pane h-1/4 absolute border-2 border-unit-panel shadow-unit-panel bg-unit-panel inline text-unit-panel bott'; 
+  if (props.index === 0) className += ' top-16';
+  if (props.index === 3) className += ' bottom-16';
+
   return (
-    <div className='w-pane 
-                    h-1/4 
-                    absolute 
-                    border-2 
-                    border-unit-panel 
-                    shadow-unit-panel 
-                    bg-unit-panel 
-                    inline 
-                    text-unit-panel
-                    ' 
-        style={props.side === 1 ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A' } : {left: '30.5%', textShadow: '2px 2px 2px #857C6A' }}>
+    <div className={className} style={props.side === 1 ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A' } : {left: '30.5%', textShadow: '2px 2px 2px #857C6A' }}>
 
       <Details />
 

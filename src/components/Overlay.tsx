@@ -41,16 +41,16 @@ const Overlay = () => {
     <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}}>
       {/* Will Need to find active teams */}
       <div className={tailwindClasses.panelLeft}>
-        {teamOne && teamOne.Units.map(unit => {
+        {teamOne && teamOne.Units.map((unit, index) => {
           return (
-            <Portrait key={unit.Name} unit={unit} side={1}/>
+            <Portrait key={unit.Name} unit={unit} side={1} index={index}/>
           )
         })}
       </div>
       <div className={tailwindClasses.panelRight}>
-        {teamTwo && teamTwo.Units.map(unit => {
+        {teamTwo && teamTwo.Units.map((unit, index) => {
           return (
-            <Portrait key={unit.Name} unit={unit} side={2}/>
+            <Portrait key={unit.Name} unit={unit} side={2} index={index}/>
           )
         })}
       </div>

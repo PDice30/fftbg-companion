@@ -6,7 +6,8 @@ import { PanelContext } from "../contexts/PanelContext"
 type PortraitProps = {
   key: string,
   unit: Unit,
-  side: number
+  side: number,
+  index: number,
 }
 
 /**
@@ -22,6 +23,7 @@ export const Portrait = (props: PortraitProps) => {
   return (
     <div
       onMouseEnter={() => {
+        console.log(props.index);
         setIsShown(true);
         setUnit(props.unit);
       }}
@@ -31,7 +33,7 @@ export const Portrait = (props: PortraitProps) => {
       }}>
         <div>
           { isShown && 
-            <UnitPanel unit={props.unit} side={props.side} />
+            <UnitPanel unit={props.unit} side={props.side} index={props.index} />
           }
         </div>
     </div>
