@@ -50,7 +50,7 @@ export const Examine = () => {
             <div className='text-3xl border-unit-panel border-2 h-1/6 align-middle text-center'>
               { examineText }
             </div>
-            <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center'>
+            <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center overflow-scroll scroll'>
               { detailDisplay }
             </div>
           </>
