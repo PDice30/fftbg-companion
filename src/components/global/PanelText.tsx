@@ -10,19 +10,21 @@ type PanelTextProps = {
 }
 
 export const PanelText = (props: PanelTextProps) => {
-  const { setExamineText, setToolTipType } = useContext(OverlayContext);
+  const { setExamineText, setToolTipType, textSize } = useContext(OverlayContext);
   let textStyle = 'h-1/6 py-1 px-2';
   if (props.canBeNotable && props.text) {
     textStyle += NOTABLES.includes(props.text) ? ' font-extrabold' : '';
   }
-  
-  const text = props.text ? props.text.slice(0, 14) : '';
+
+  const textLength = textSize === 'text-2xl' ? 14 : 12;
+  const text = props.text ? props.text.slice(0, textLength) : '';
+  const examineText = props.text ? props.text : '';
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-return
     <div className={textStyle} 
       onClick={() => {
-        setExamineText(text.replace('*', ''));
+        setExamineText(examineText.replace('*', ''));
         setToolTipType(props.toolTipType);
       }}
     >

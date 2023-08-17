@@ -19,6 +19,10 @@ div {
   animation: 1s alternate enterFromRight;
 }
 
+.pointerAnimation {
+  animation: 1s infinite alternate upDown;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scroll::-webkit-scrollbar {
   display: none;
@@ -42,6 +46,16 @@ div {
 }
 
 @keyframes leftRight {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 10px;
+  }
+}
+
+@keyframes upDown {
   from {
     margin-top: 0px;
   }

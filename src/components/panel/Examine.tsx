@@ -1,20 +1,37 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTips } from "../../models";
-import { NOTABLES } from "../../constants";
+import { BASE_IMAGE_URL, NOTABLES } from "../../constants";
 import { getSizeUp } from "../../utils/textHelper";
 
 export const Examine = () => {
+  const [showPointer, setShowPointer] = useState(false);
   const { examineText, toolTips, toolTipType, unit, textSize } = useContext(OverlayContext);
+  const scrollRef = useRef(null);
+
   const placeHolderText = '<- Click on an Item or Ability to find out more info';
 
   let string;
   let detailDisplay;
 
+  let pointerClass = 'pointerAnimation absolute rotate-90 scale-90 right-pointer ';
+  if (textSize === 'text-2xl') pointerClass += 'top-48';
+  else if (textSize === 'text-xl')  pointerClass += 'top-40';
+  else if (textSize === 'text-lg')  pointerClass += 'top-32';
+  
+  useEffect(() => {
+    if (scrollRef.current) {
+      if ((scrollRef.current as HTMLDivElement).scrollHeight > (scrollRef.current as HTMLDivElement).clientHeight) {
+        setShowPointer(true);
+     } else {
+      setShowPointer(false);
+     }
+    }
+  }, [examineText])
+
   switch (toolTipType) {
     case 'ClassSkills':
       detailDisplay = unit.ClassSkills.map((skill, index) => {
-        console.log(index);
         let style = 'inline-block';
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
@@ -51,8 +68,9 @@ export const Examine = () => {
             <div className={'border-unit-panel border-2 h-1/6 align-middle text-center ' + getSizeUp(textSize)}>
               { examineText }
             </div>
-            <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center overflow-scroll scroll'>
+            <div ref={scrollRef} className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center overflow-scroll scroll'>
               { detailDisplay }
+              { showPointer && <img className={pointerClass} src={BASE_IMAGE_URL + 'pointer.png'}/> }
             </div>
           </>
         </div>

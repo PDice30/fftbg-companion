@@ -37,6 +37,9 @@ export default {
       textColor: {
         'unit-panel': 'rgb(51, 42, 30)'
       },
+      inset: {
+        'pointer': '-2rem'
+      }
     },
   },
   plugins: [],

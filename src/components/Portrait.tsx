@@ -23,7 +23,6 @@ export const Portrait = (props: PortraitProps) => {
   return (
     <div
       onMouseEnter={() => {
-        console.log(props.index);
         setIsShown(true);
         setUnit(props.unit);
       }}
