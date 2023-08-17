@@ -32,8 +32,8 @@ const App = () => {
     )
   }
 
-  if      (width > 1400 && height > 850) setTextSize('text-2xl');
-  else if (width > 1300 && height > 800) setTextSize('text-xl');
+  if      (width > 1400 && height > 800) setTextSize('text-2xl');
+  else if (width > 1250 && height > 680) setTextSize('text-xl');
   else if (width > 1000 && height > 600) setTextSize('text-lg');
 
   return (

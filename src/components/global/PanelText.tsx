@@ -15,17 +15,18 @@ export const PanelText = (props: PanelTextProps) => {
   if (props.canBeNotable && props.text) {
     textStyle += NOTABLES.includes(props.text) ? ' font-extrabold' : '';
   }
-
+  
+  const text = props.text ? props.text.slice(0, 14) : '';
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-return
     <div className={textStyle} 
       onClick={() => {
-        setExamineText(props.text?.replace('*', ''));
+        setExamineText(text.replace('*', ''));
         setToolTipType(props.toolTipType);
       }}
     >
-      {props.text}
+      {text}
     </div>
   )
 }
