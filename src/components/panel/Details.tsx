@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { PanelContext } from "../../contexts/PanelContext";
+import { OverlayContext } from "../../contexts/OverlayContext";
 
 export const Details = () => {
-  const { unit } = useContext(PanelContext);
+  const { unit } = useContext(OverlayContext);
 
   let name = unit.Name ? unit.Name.slice(0, 12) : 'Fighter';
   let nameStyle = 'h-1/6 text-3xl';

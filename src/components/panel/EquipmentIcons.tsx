@@ -2,10 +2,10 @@ import { useContext } from "react"
 import { BASE_IMAGE_URL, EQUIPMENT_ICONS } from "../../constants"
 import { Unit } from "../../models"
 import { Icon } from "../global/Icon"
-import { PanelContext } from "../../contexts/PanelContext"
+import { OverlayContext } from "../../contexts/OverlayContext"
 
 export const EquipmentIcons = () => {
-  const { unit } = useContext(PanelContext);
+  const { unit } = useContext(OverlayContext);
   const isMonster = unit.Gender === 'Monster';
 
   return (

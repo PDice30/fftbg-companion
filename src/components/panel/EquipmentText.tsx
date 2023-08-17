@@ -1,9 +1,9 @@
 import { useContext } from "react"
 import { PanelText } from "../global/PanelText"
-import { PanelContext } from "../../contexts/PanelContext"
+import { OverlayContext } from "../../contexts/OverlayContext"
 
 export const EquipmentText = () => {
-  const { unit } = useContext(PanelContext);
+  const { unit } = useContext(OverlayContext);
   const isMonster = unit.Gender === 'Monster';
   
   return (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { PanelContext } from "../../contexts/PanelContext";
+import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTipType } from "../../models";
 import { NOTABLES } from "../../constants";
 
@@ -10,7 +10,7 @@ type PanelTextProps = {
 }
 
 export const PanelText = (props: PanelTextProps) => {
-  const { setExamineText, setToolTipType } = useContext(PanelContext);
+  const { setExamineText, setToolTipType } = useContext(OverlayContext);
   let textStyle = 'h-1/6 py-1 px-2';
   if (props.canBeNotable && props.text) {
     textStyle += NOTABLES.includes(props.text) ? ' font-extrabold' : '';

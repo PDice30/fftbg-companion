@@ -4,10 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import { Portrait } from "./Portrait";
 import getData from "../utils/dataHelper";
 import getTooltips from "../utils/tooltips";
-import { PanelContext } from "../contexts/PanelContext";
+import { OverlayContext } from "../contexts/OverlayContext";
 
 const Overlay = () => {
-  const { setToolTips } = useContext(PanelContext);
+  const { setToolTips } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);

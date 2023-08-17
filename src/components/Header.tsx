@@ -13,8 +13,8 @@ export const Header = () => {
                     pt-4
                     left-1/4
                     '>
-      Please adjust your browser size.  A 16:9 aspect ratio is required.
-      The Twitch viewer must be at least 1420px wide by 800 px high.
+      Please adjust your browser size.
+      The Twitch viewer must be at least 1300px wide by 730 px high.
    </div>
   )
 }

@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { PanelContext } from "../../contexts/PanelContext";
+import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTips } from "../../models";
 import { NOTABLES } from "../../constants";
 
 export const Examine = () => {
-  const { examineText, toolTips, toolTipType, unit } = useContext(PanelContext);
+  const { examineText, toolTips, toolTipType, unit } = useContext(OverlayContext);
   const placeHolderText = '<- Click on an Item or Ability to find out more info';
 
   let string;

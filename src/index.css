@@ -15,6 +15,10 @@ div {
   animation: 1s infinite alternate leftRight;
 }
 
+.allowButtonAnimation {
+  animation: 1s alternate enterFromRight;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scroll::-webkit-scrollbar {
   display: none;
@@ -25,6 +29,16 @@ div {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   overflow-y: scroll;
+}
+
+@keyframes enterFromRight {
+  from {
+    margin-left: 10px;
+  }
+
+  to {
+    margin-top: 0px;
+  }
 }
 
 @keyframes leftRight {

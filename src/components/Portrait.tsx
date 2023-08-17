@@ -1,7 +1,7 @@
 import { useContext, useState } from "react"
 import { Unit } from "../models"
 import { UnitPanel } from "./UnitPanel"
-import { PanelContext } from "../contexts/PanelContext"
+import { OverlayContext } from "../contexts/OverlayContext"
 
 type PortraitProps = {
   key: string,
@@ -17,7 +17,7 @@ type PortraitProps = {
  * @returns 
  */
 export const Portrait = (props: PortraitProps) => {
-  const { setUnit, setExamineText } = useContext(PanelContext)
+  const { setUnit, setExamineText } = useContext(OverlayContext)
   const [isShown, setIsShown] = useState(false);
 
   return (

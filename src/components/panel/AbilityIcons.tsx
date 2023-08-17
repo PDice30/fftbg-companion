@@ -1,10 +1,10 @@
 import { useContext } from "react"
 import { ABILITY_ICONS, BASE_IMAGE_URL } from "../../constants"
 import { Icon } from "../global/Icon"
-import { PanelContext } from "../../contexts/PanelContext"
+import { OverlayContext } from "../../contexts/OverlayContext"
 
 export const AbilityIcons = () => {
-  const { unit, toolTips } = useContext(PanelContext);
+  const { unit, toolTips } = useContext(OverlayContext);
   
   // TODO: cleanup undefined type logic
   const isMonster = unit.Gender === 'Monster';

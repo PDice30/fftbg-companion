@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { BASE_IMAGE_URL, BASE_ITEMS_URL } from "../../constants";
-import { PanelContext } from "../../contexts/PanelContext";
+import { OverlayContext } from "../../contexts/OverlayContext";
 
 type IconProps = {
   name: string;
@@ -9,7 +9,7 @@ type IconProps = {
 }
 
 export const Icon = (iconProps: IconProps) => {
-  const { setExamineText, setToolTipType } = useContext(PanelContext);
+  const { setExamineText, setToolTipType } = useContext(OverlayContext);
   const padding = iconProps.padding ? iconProps.padding : 'p-1';
   const style = `h-1/6 items-center ${padding}`;
 

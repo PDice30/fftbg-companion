@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 import { ToolTipType, ToolTips, Unit } from "../models";
 import defaultUnit from "../data/defaultUnit";
 
-type PanelContextType = {
+type OverlayContextType = {
   unit: Unit,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setUnit: Function,
@@ -14,10 +14,16 @@ type PanelContextType = {
   setToolTips: Function,
   toolTipType: ToolTipType,
   // eslint-disable-next-line @typescript-eslint/ban-types
-  setToolTipType: Function
+  setToolTipType: Function,
+  isButtonVisible: boolean,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setIsButtonVisible: Function,
+  allowOverlay: boolean,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setAllowOverlay: Function,
 }
 
-export const PanelContext = createContext<PanelContextType>({
+export const OverlayContext = createContext<OverlayContextType>({
   unit: defaultUnit,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setUnit: () => {},
@@ -30,16 +36,24 @@ export const PanelContext = createContext<PanelContextType>({
   toolTipType: 'Ability',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setToolTipType: () => {},
+  isButtonVisible: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setIsButtonVisible: () => {},
+  allowOverlay: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setAllowOverlay: () => {},
 });
 
-export const PanelProvider = (props: React.PropsWithChildren) => {
+export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [unit, setUnit] = useState<Unit>(defaultUnit);
   const [examineText, setExamineText] = useState('');
   const [toolTips, setToolTips] = useState<ToolTips>({})
   const [toolTipType, setToolTipType] = useState<ToolTipType>('Ability');
+  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+  const [allowOverlay, setAllowOverlay] = useState<boolean>(false);
 
   return (
-    <PanelContext.Provider
+    <OverlayContext.Provider
       value={{ 
         unit: unit, 
         setUnit: setUnit, 
@@ -49,9 +63,13 @@ export const PanelProvider = (props: React.PropsWithChildren) => {
         setToolTips: setToolTips,
         toolTipType: toolTipType,
         setToolTipType: setToolTipType,
+        isButtonVisible: isButtonVisible,
+        setIsButtonVisible: setIsButtonVisible,
+        allowOverlay: allowOverlay,
+        setAllowOverlay: setAllowOverlay
       }}
     >
       {props.children}
-    </PanelContext.Provider>
+    </OverlayContext.Provider>
   );
 };
