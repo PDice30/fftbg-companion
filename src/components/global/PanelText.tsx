@@ -16,7 +16,7 @@ export const PanelText = (props: PanelTextProps) => {
     textStyle += NOTABLES.includes(props.text) ? ' font-extrabold' : '';
   }
 
-  const textLength = textSize === 'text-2xl' ? 14 : 12;
+  const textLength = textSize === 'text-lg' ? 12 : 14;
   const text = props.text ? props.text.slice(0, textLength) : '';
   const examineText = props.text ? props.text : '';
 

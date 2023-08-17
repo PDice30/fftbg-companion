@@ -23,7 +23,8 @@ export default {
         'dark-unit-panel':  `url(${BASE_IMAGE_URL}bg-dark.gif)`,
       },
       padding: {
-        'top': '2px'
+        'top': '2px',
+        'doublehand': '.33rem'
       },
       boxShadowColor: {
         'unit-panel': 'rgb(32, 24, 15)'
