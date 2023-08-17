@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { OverlayContext } from "../../contexts/OverlayContext";
+import { getSizeUp } from "../../utils/textHelper";
 
 export const Details = () => {
-  const { unit } = useContext(OverlayContext);
+  const { unit, textSize } = useContext(OverlayContext);
 
   let name = unit.Name ? unit.Name.slice(0, 12) : 'Fighter';
-  let nameStyle = 'h-1/6 text-3xl';
+  let nameStyle = 'h-1/6 ' + getSizeUp(textSize);
 
   if (unit.RaidBoss) {
     name = ('[!] ' + name).slice(0, 12);
@@ -14,7 +15,7 @@ export const Details = () => {
 
   // TODO: More interesting details panel
   return (
-    <div className='h-full w-3/16 float-left text-2xl px-2'>
+    <div className={'h-full w-3/16 float-left px-2 ' + textSize}>
       <div className={nameStyle}>{name}</div>
       <div className='h-1/6'>{unit.Gender}</div>
       <div className='h-1/6'>Brave: {unit.Brave}</div>

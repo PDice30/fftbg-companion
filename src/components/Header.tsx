@@ -1,7 +1,7 @@
 export const Header = () => {
   return (
     <div className='w-pane 
-                    h-1/10
+                    h-1/5
                     absolute 
                     border-2 
                     border-unit-panel 

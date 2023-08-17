@@ -21,6 +21,9 @@ type OverlayContextType = {
   allowOverlay: boolean,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setAllowOverlay: Function,
+  textSize: string,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setTextSize: Function,
 }
 
 export const OverlayContext = createContext<OverlayContextType>({
@@ -42,6 +45,9 @@ export const OverlayContext = createContext<OverlayContextType>({
   allowOverlay: false,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setAllowOverlay: () => {},
+  textSize: 'text-2xl',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setTextSize: () => {},
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
@@ -51,6 +57,7 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [toolTipType, setToolTipType] = useState<ToolTipType>('Ability');
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
   const [allowOverlay, setAllowOverlay] = useState<boolean>(false);
+  const [textSize, setTextSize] = useState<string>('text-2xl');
 
   return (
     <OverlayContext.Provider
@@ -66,7 +73,9 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
         isButtonVisible: isButtonVisible,
         setIsButtonVisible: setIsButtonVisible,
         allowOverlay: allowOverlay,
-        setAllowOverlay: setAllowOverlay
+        setAllowOverlay: setAllowOverlay,
+        textSize: textSize,
+        setTextSize: setTextSize,
       }}
     >
       {props.children}

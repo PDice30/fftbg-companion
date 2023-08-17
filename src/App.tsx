@@ -11,7 +11,7 @@ import { AllowButton } from './components/AllowButton';
 
 const App = () => {
   const { width, height } = useWindowSize();
-  const { isButtonVisible, setIsButtonVisible, allowOverlay } = useContext(OverlayContext);
+  const { isButtonVisible, setIsButtonVisible, allowOverlay, setTextSize } = useContext(OverlayContext);
 
   if (!allowOverlay) {
     return (
@@ -29,11 +29,16 @@ const App = () => {
     )
   }
 
-  if (width < 1300 || height < 730) {
+  // Twitch video player is too small
+  if (width < 1000 || height < 600) {
     return (
       <Header />
     )
   }
+
+  if      (width > 1400 && height > 850) setTextSize('text-2xl');
+  else if (width > 1300 && height > 800) setTextSize('text-xl');
+  else if (width > 1200 && height > 700) setTextSize('text-lg');
 
   return (
     <Overlay />

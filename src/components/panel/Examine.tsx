@@ -2,9 +2,10 @@ import { useContext } from "react";
 import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTips } from "../../models";
 import { NOTABLES } from "../../constants";
+import { getSizeUp } from "../../utils/textHelper";
 
 export const Examine = () => {
-  const { examineText, toolTips, toolTipType, unit } = useContext(OverlayContext);
+  const { examineText, toolTips, toolTipType, unit, textSize } = useContext(OverlayContext);
   const placeHolderText = '<- Click on an Item or Ability to find out more info';
 
   let string;
@@ -45,9 +46,9 @@ export const Examine = () => {
   return (
     <>
       { examineText !== '' ?
-        <div className='h-full w-4/16 left float-left text-2xl align-middle p-1'>
+        <div className={'h-full w-4/16 left float-left align-middle p-1 ' + textSize}>
           <>
-            <div className='text-3xl border-unit-panel border-2 h-1/6 align-middle text-center'>
+            <div className={'border-unit-panel border-2 h-1/6 align-middle text-center ' + getSizeUp(textSize)}>
               { examineText }
             </div>
             <div className='border-unit-panel border-2 h-3/4 mt-2 align-middle text-center overflow-scroll scroll'>
@@ -59,7 +60,7 @@ export const Examine = () => {
         <>
           <div className='h-1/4'></div>
           <div className='h-1/2'>
-            <div className='text-2xl align-middle'>
+            <div className={'align-middle ' + textSize}>
               {placeHolderText}
             </div>
           <div className='h-1/4'></div>
