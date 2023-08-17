@@ -11,7 +11,7 @@ type IconProps = {
 export const Icon = (iconProps: IconProps) => {
   const { setExamineText, setToolTipType } = useContext(OverlayContext);
   const padding = iconProps.padding ? iconProps.padding : 'p-1';
-  const style = `h-1/6 items-center ${padding}`;
+  const style = `h-1/6 items-center mx-auto ${padding}`;
 
   const handleClick = () => {
     if (iconProps.item) {

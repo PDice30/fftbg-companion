@@ -10,8 +10,8 @@ export const EquipmentIcons = () => {
 
   return (
     <div className='h-full w-1/16 float-left bg-dark-unit-panel'>
-      <div className='h-1/10 pt-px'>
-        <img src={BASE_IMAGE_URL + 'eqp.png'}/>
+      <div className='h-1/10 pt-px relative'>
+        <img className='absolute max-w-none' style={{width: '100%', top: '-0.5rem'}} src={BASE_IMAGE_URL + 'eqp.png'}/>
       </div>
       { isMonster ? 
         <>

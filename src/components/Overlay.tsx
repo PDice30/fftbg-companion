@@ -5,9 +5,10 @@ import { Portrait } from "./Portrait";
 import getData from "../utils/dataHelper";
 import getTooltips from "../utils/tooltips";
 import { OverlayContext } from "../contexts/OverlayContext";
+import { AllowButton } from "./AllowButton";
 
 const Overlay = () => {
-  const { setToolTips } = useContext(OverlayContext);
+  const { setToolTips, isButtonVisible, setIsButtonVisible } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -37,22 +38,29 @@ const Overlay = () => {
 
   // TODO - teams array could just be one to iterate through, and first half float left
   return (
-    // <div className='w-4/5 h-screen' style={{fontFamily: 'Altima', fontSize: '30px'}}>
-    <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}}>
-      {/* Will Need to find active teams */}
-      <div className={tailwindClasses.panelLeft}>
-        {teamOne && teamOne.Units.map((unit, index) => {
-          return (
-            <Portrait key={unit.Name} unit={unit} side={1} index={index}/>
-          )
-        })}
-      </div>
-      <div className={tailwindClasses.panelRight}>
-        {teamTwo && teamTwo.Units.map((unit, index) => {
-          return (
-            <Portrait key={unit.Name} unit={unit} side={2} index={index}/>
-          )
-        })}
+    <div className='w-screen h-screen'
+      onMouseOver={() => { setIsButtonVisible(true); }}
+      onMouseLeave={() => { setIsButtonVisible(false); }}>
+        { isButtonVisible && 
+          <AllowButton />
+        }
+      <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}} >
+        
+        {/* Will Need to find active teams */}
+        <div className={tailwindClasses.panelLeft}>
+          {teamOne && teamOne.Units.map((unit, index) => {
+            return (
+              <Portrait key={unit.Name} unit={unit} side={1} index={index}/>
+            )
+          })}
+        </div>
+        <div className={tailwindClasses.panelRight}>
+          {teamTwo && teamTwo.Units.map((unit, index) => {
+            return (
+              <Portrait key={unit.Name} unit={unit} side={2} index={index}/>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

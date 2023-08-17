@@ -19,8 +19,8 @@ export const AbilityIcons = () => {
 
   return (
     <div className='h-full w-1/16 float-left bg-dark-unit-panel'>
-      <div className='h-1/10 pt-px'>
-        <img src={BASE_IMAGE_URL + 'ability.png'} className='absolute'/>
+      <div className='h-1/10 pt-px relative'>
+        <img className='absolute max-w-none' style={{width: '150%', left: '-0.6rem', top: '-0.5rem'}} src={BASE_IMAGE_URL + 'ability.png'}/>
       </div>
 
       { 

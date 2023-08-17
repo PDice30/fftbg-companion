@@ -4,7 +4,7 @@ import { PanelText } from "../global/PanelText"
 import { OverlayContext } from "../../contexts/OverlayContext"
 
 export const AbilityText = () => {
-  const { unit, toolTips } = useContext(OverlayContext);
+  const { unit, toolTips, textSize } = useContext(OverlayContext);
 
   // TODO: cleanup undefined type logic
   const isMonster = unit.Gender === 'Monster';
@@ -18,7 +18,7 @@ export const AbilityText = () => {
   }
 
   return (
-    <div className='h-full w-3/16 float-left text-2xl align-middle'>
+    <div className={'h-full w-3/16 float-left align-middle ' + textSize}>
       <div className='h-1/10' />
 
       { 
