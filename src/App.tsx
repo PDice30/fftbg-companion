@@ -7,7 +7,6 @@ import { AllowButton } from './components/AllowButton';
 
 // TODO: Dagger and Swords and possibly other items have distorted images
 // TODO: Better overall error handling
-// TODO: Bows or a unit with "Two Hands" support should show a two handed equipment slot icon
 
 const App = () => {
   const { width, height } = useWindowSize();

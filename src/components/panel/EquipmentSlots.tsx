@@ -6,11 +6,12 @@ export const EquipmentSlots = () => {
   const { unit } = useContext(OverlayContext);
 
   const useDoublehandIcon = unit.Mainhand?.includes(' Bow') || unit.SupportSkill === 'Doublehand';
+  const isCrossBow = unit.Mainhand?.includes('Hunting Bow') || unit.Mainhand?.includes('Poison Bow');
 
   return (
     <div className='h-full w-1/16 float-left'>
       <div className='h-1/10' />
-      { useDoublehandIcon ?
+      { useDoublehandIcon && !isCrossBow ?
         <>
           <Icon name='doublehand' padding={'p-doublehand'} />
           <Icon name='nothing' padding={'p-2'} />
