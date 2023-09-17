@@ -29,7 +29,7 @@ export const Zodiac = (props: ZodiacProps) => {
         <Icon style='pl-1 pb-2' name={'nothing'} type='Base' />
         {
           teamOne && teamOne.map((unit, index) => {
-            const style = index === teamOne.length - 1 ? 'pl-1' : 'pl-1 pb-2';
+            const style = index === teamOne.length - 1 ? 'pl-1' : 'pl-1 pb-1';
             return (
               <Icon style={style} key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
             );
@@ -40,7 +40,7 @@ export const Zodiac = (props: ZodiacProps) => {
         <Icon style='pr-1 pb-2' name={'nothing'} type='Base' />
         {
           teamTwo && teamTwo.map((unit, index) => {
-            const style = index === teamOne.length - 1 ? 'pr-1' : 'pr-1 pb-2';
+            const style = index === teamOne.length - 1 ? 'pr-1' : 'pr-1 pb-1';
             return (
               <Icon style={style} key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
             );
