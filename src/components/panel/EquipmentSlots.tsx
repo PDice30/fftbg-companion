@@ -5,13 +5,12 @@ import { OverlayContext } from '../../contexts/OverlayContext';
 export const EquipmentSlots = () => {
   const { unit } = useContext(OverlayContext);
 
-  const useDoublehandIcon = unit.Mainhand?.includes(' Bow') || unit.SupportSkill === 'Doublehand';
-  const isCrossBow = unit.Mainhand?.includes('Hunting Bow') || unit.Mainhand?.includes('Poison Bow');
+  const useDoublehandIcon = unit.SupportSkill === 'Doublehand';
 
   return (
     <div className='h-full w-1/16 float-left'>
       <div className='h-1/10' />
-      { useDoublehandIcon && !isCrossBow ?
+      { useDoublehandIcon ?
         <>
           <Icon name='doublehand' padding={'p-doublehand'} type='Base' />
           <Icon name='nothing' padding={'p-2'} type='Base' />
