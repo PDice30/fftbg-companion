@@ -13,18 +13,18 @@ export const EquipmentSlots = () => {
       <div className='h-1/10' />
       { useDoublehandIcon && !isCrossBow ?
         <>
-          <Icon name='doublehand' padding={'p-doublehand'} />
-          <Icon name='nothing' padding={'p-2'} />
+          <Icon name='doublehand' padding={'p-doublehand'} type='Base' />
+          <Icon name='nothing' padding={'p-2'} type='Base' />
         </>
       :
         <>
-          <Icon name='hand' padding={'p-2'} />
-          <Icon name='hand' padding={'p-2'} />
+          <Icon name='hand' padding={'p-2'} type='Base' />
+          <Icon name='hand' padding={'p-2'} type='Base' />
         </>
       }
-      <Icon name='head' padding={'p-2'} />
-      <Icon name='body' padding={'p-2'} />
-      <Icon name='accessory' padding={'p-2'} />
+      <Icon name='head' padding={'p-2'} type='Base' />
+      <Icon name='body' padding={'p-2'} type='Base' />
+      <Icon name='accessory' padding={'p-2'} type='Base' />
     </div>
   )
 }

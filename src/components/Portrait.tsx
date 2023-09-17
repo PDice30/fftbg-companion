@@ -2,6 +2,7 @@ import { useContext, useState } from "react"
 import { Unit } from "../models"
 import { UnitPanel } from "./UnitPanel"
 import { OverlayContext } from "../contexts/OverlayContext"
+import { Zodiac } from "./Zodiac"
 
 type PortraitProps = {
   key: string,
@@ -30,9 +31,12 @@ export const Portrait = (props: PortraitProps) => {
         setIsShown(false);
         setExamineText('');
       }}>
-        <div>
+        <div className='border-4'>
           { isShown && 
-            <UnitPanel unit={props.unit} side={props.side} index={props.index} />
+            <>
+              <Zodiac unitIndex={props.index} />
+              <UnitPanel unit={props.unit} side={props.side} index={props.index} />
+            </>
           }
         </div>
     </div>

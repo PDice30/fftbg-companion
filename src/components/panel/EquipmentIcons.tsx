@@ -21,11 +21,11 @@ export const EquipmentIcons = () => {
           const equipmentName = unit[icon as keyof Unit] as string;
           if (equipmentName) {
             return(
-              <Icon key={index} name={equipmentName} item={true}/>
+              <Icon key={index} name={equipmentName} type='Item' />
             )
           }
           return(
-            <Icon key={index} name={'blank'} item={false}/>
+            <Icon key={index} name={'blank'} type='Base'/>
           )
           
         })

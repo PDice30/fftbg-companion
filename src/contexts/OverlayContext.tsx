@@ -24,6 +24,12 @@ type OverlayContextType = {
   textSize: string,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setTextSize: Function,
+  isIntermission: boolean,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setIsIntermission: Function,
+  currentUnits: Unit[],
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setCurrentUnits: Function,
 }
 
 export const OverlayContext = createContext<OverlayContextType>({
@@ -48,6 +54,12 @@ export const OverlayContext = createContext<OverlayContextType>({
   textSize: 'text-2xl',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setTextSize: () => {},
+  isIntermission: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setIsIntermission: () => {},
+  currentUnits: [],
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setCurrentUnits: () => {},
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
@@ -58,6 +70,8 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
   const [allowOverlay, setAllowOverlay] = useState<boolean>(false);
   const [textSize, setTextSize] = useState<string>('text-2xl');
+  const [isIntermission, setIsIntermission] = useState<boolean>(false);
+  const [currentUnits, setCurrentUnits] = useState<Unit[]>([]);
 
   return (
     <OverlayContext.Provider
@@ -76,6 +90,10 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
         setAllowOverlay: setAllowOverlay,
         textSize: textSize,
         setTextSize: setTextSize,
+        isIntermission: isIntermission,
+        setIsIntermission: setIsIntermission,
+        currentUnits: currentUnits,
+        setCurrentUnits: setCurrentUnits,
       }}
     >
       {props.children}

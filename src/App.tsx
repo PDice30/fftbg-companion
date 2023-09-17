@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { OverlayContext } from './contexts/OverlayContext';
-import { Header } from './components/Header';
 import Overlay from './components/Overlay';
 import { useWindowSize } from 'usehooks-ts';
 import { AllowButton } from './components/AllowButton';
@@ -27,7 +26,13 @@ const App = () => {
   // Twitch video player is too small
   if (width < 1000 || height < 600) {
     return (
-      <Header />
+      <div className='w-screen h-screen'
+        onMouseOver={() => { setIsButtonVisible(true); }}
+        onMouseLeave={() => { setIsButtonVisible(false); }}>
+          { isButtonVisible && 
+            <AllowButton />
+          }
+      </div>
     )
   }
 

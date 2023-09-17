@@ -2,7 +2,7 @@
 <img src="https://fftbg-companion.s3.amazonaws.com/fftbg-companion.png" 
      alt="FFTBG Companion Logo" width="128" height="128">
 
-# FFTBG Companion
+# FFTBG Companion 1.2.0
 
 FFTBG Companion is a Twitch Extension Overlay for twitch.tv/fftbattleground. 
 
@@ -25,3 +25,17 @@ Special thanks goes to Dice_the_Vice and all the Viceroys!
 ## Build Notes (for me, or you, I guess)
 Two lines of the index.html file in the dist output need changing.  Both from '/assets/' to './assets/'.
 The asset link to the Altima.ttf file in the build is incorrect for Twitch asset hosting and needs to be just 'url(./Altima-21192d5e.ttf)' (the 'assets' folder is removed)
+
+## Version History
+
+1.2.0: 
+- Removed Warning overlay and replaced it with a red flail warning icon
+- Added Compatibility stars
+- Removed overlay during "Intermission"
+- Some general cleanup and fixes
+
+1.1.0: Moving API from Proxy Server to FFTBG.com
+
+1.0.0: Full Release Version to FFTBattleground
+
+0.0.1: Initial testing version

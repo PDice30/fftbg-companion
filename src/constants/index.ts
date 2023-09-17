@@ -1,10 +1,10 @@
 import { TeamName } from "../models";
 
 export const BASE_API_URL = 'https://fftbg.com/api/';
-// export const BASE_API_URL = 'https://fftbg.dev-bn.com/api/';
 export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
 export const BASE_MUSTADIO_URL = 'https://mustadio-images.s3.amazonaws.com/';
-export const BASE_ITEMS_URL = 'https://mustadio-images.s3.amazonaws.com/items/';
+export const BASE_ITEMS_URL = BASE_MUSTADIO_URL + 'items/';
+export const BASE_ZODIAC_URL = BASE_MUSTADIO_URL + 'zodiac/';
 
 export const LOCAL_ICON_URL = './src/assets/images/icons/';
 export const EQUIPMENT_SLOTS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];

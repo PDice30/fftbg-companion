@@ -27,13 +27,13 @@ export const AbilityIcons = () => {
       (isMonster && monsterAbilities?.length) ? 
         monsterAbilities.map((_, index) => {
           return (
-            <Icon key={index} name='monster-ability' />
+            <Icon key={index} name='monster-ability' type='Base' />
           )
         })
       :
         ABILITY_ICONS.map((icon, index) => {
           return (
-            <Icon key={index} name={icon} />
+            <Icon key={index} name={icon} type='Base' />
           )
         })
       }

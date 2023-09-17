@@ -21,8 +21,8 @@ export const UnitPanel = (props: UnitPanelProps) => {
   // TODO: refactor the style
 
   let className = 'w-pane h-1/4 absolute border-2 border-unit-panel shadow-unit-panel bg-unit-panel inline text-unit-panel bott'; 
-  if (props.index === 0) className += ' top-8';
-  if (props.index === 3) className += ' bottom-8';
+  if (props.index === 0 || props.index === 4) className += ' top-8';
+  if (props.index === 3 || props.index === 7) className += ' bottom-8';
 
   return (
     <div className={className} style={props.side === 1 ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A' } : {left: '30.5%', textShadow: '2px 2px 2px #857C6A' }}>
