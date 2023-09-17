@@ -1,10 +1,7 @@
-import { useContext, useState } from "react"
-import { Unit } from "../models"
+import { useContext } from "react"
 import { OverlayContext } from "../contexts/OverlayContext"
-import { BASE_ZODIAC_URL } from "../constants";
 import { Icon } from "./global/Icon";
 import { compareZodiac } from "../utils/compareZodiac";
-
 
 type ZodiacProps = {
   unitIndex: number,
