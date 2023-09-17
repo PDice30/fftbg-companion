@@ -75,8 +75,8 @@ const Overlay = () => {
 }
 
 const overlay = 'w-4/5 h-screen';
-const panelLeft = 'grid grid-cols-1 h-screen w-1/9 float-left';
-const panelRight = 'grid grid-cols-1 h-screen w-1/9 float-right';
+const panelLeft = 'grid grid-cols-1 grid-rows-4 h-screen w-1/9 float-left';
+const panelRight = 'grid grid-cols-1 grid-rows-4 h-screen w-1/9 float-right';
 
 const tailwindClasses =  {
   // overlay: import.meta.env.PROD ? overlay : overlay,

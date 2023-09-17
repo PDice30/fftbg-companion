@@ -31,7 +31,7 @@ export const Portrait = (props: PortraitProps) => {
         setIsShown(false);
         setExamineText('');
       }}>
-        <div className='border-4'>
+        <div>
           { isShown && 
             <>
               <Zodiac unitIndex={props.index} />

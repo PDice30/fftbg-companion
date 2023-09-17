@@ -28,27 +28,24 @@ export const Zodiac = (props: ZodiacProps) => {
 
   return (
     <>
-      {/* <div className='grid grid-cols-1 float-left h-full w-1/4 border-2'> */}
       <div className='h-full w-1/4 float-left'>
+        <Icon style='pl-1 pb-2' name={'nothing'} type='Base' />
         {
           teamOne && teamOne.map((unit, index) => {
+            const style = index === teamOne.length - 1 ? 'pl-1' : 'pl-1 pb-2';
             return (
-              // <div className='h-1/4 w-1/4'>
-                <Icon style='h-1/4' key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
-              // </div>
-              // <Image url='BASE_ZODIAC_URL' ></Image>
+              <Icon style={style} key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
             );
           })
         } 
       </div>
       <div className='h-full w-1/4 float-right'>
-      {/* <div className='grid grid-cols-1 float-right h-full w-1/4 border-2'> */}
+        <Icon style='pr-1 pb-2' name={'nothing'} type='Base' />
         {
           teamTwo && teamTwo.map((unit, index) => {
+            const style = index === teamOne.length - 1 ? 'pr-1' : 'pr-1 pb-2';
             return (
-              // <div className='h-1/4 w-1/4'>
-                <Icon style='h-1/4' key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
-              // </div>
+              <Icon style={style} key={index} name={`${compareZodiac(thisUnit.Sign, thisUnit.Gender, unit.Sign, unit.Gender)}star`} type='Zodiac' />
             );
           })
         } 

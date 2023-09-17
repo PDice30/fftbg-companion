@@ -30,7 +30,7 @@ const App = () => {
         onMouseOver={() => { setIsButtonVisible(true); }}
         onMouseLeave={() => { setIsButtonVisible(false); }}>
           { isButtonVisible && 
-            <AllowButton />
+            <AllowButton warning={true}/>
           }
       </div>
     )
