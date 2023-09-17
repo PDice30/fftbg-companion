@@ -19,6 +19,7 @@ const Overlay = () => {
     const fetchData = async () => {
       const data = await getData();
 
+      // TODO: Can be lag of still showing old champs as new tourney starts
       if (data[0].Name === 'Champion Team' && data[1].Name === 'Champion Team') {
         setIsIntermission(true);
       } else {

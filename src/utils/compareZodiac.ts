@@ -109,25 +109,27 @@ export const zodiacMapping = {
 
 export const compareZodiac = (z1: string, gender1: string, z2: string, gender2: string) => {
   const compat = zodiacMapping[z1][z2];
+
   if (compat !== zodiacMapping[z2][z1]) {
-      throw new Error(`zodiac compatibility issue: ${z1} ${z2}`);
+    throw new Error(`zodiac compatibility issue: ${z1} ${z2}`);
   }
+  
   if (!compat) {
-      return 3;
+    return 3;
   } else if (compat === MINMAX) {
-      if (gender1 === 'Monster' || gender2 === 'Monster') {
-          return 2;
-      } else if (gender1 === gender2) {
-          return 1;
-      } else {
-          return 5;
-      }
-  } else if (compat === GOOD) {
-      return 4;
-  } else if (compat === BAD) {
+    if (gender1 === 'Monster' || gender2 === 'Monster') {
       return 2;
+    } else if (gender1 === gender2) {
+      return 1;
+    } else {
+      return 5;
+    }
+  } else if (compat === GOOD) {
+    return 4;
+  } else if (compat === BAD) {
+    return 2;
   } else {
-      throw new Error(`zodiac compatibility issue: ${z1} ${z2} ${gender1} ${gender2}`);
+    throw new Error(`zodiac compatibility issue: ${z1} ${z2} ${gender1} ${gender2}`);
   }
 }
 
