@@ -10,7 +10,7 @@ type AllowButtonProps = {
 export const AllowButton = (props: AllowButtonProps) => {
   const { allowOverlay, setAllowOverlay } = useContext(OverlayContext);
 
-  let title = allowOverlay ? 'Extension is On' : 'Extension is Off';
+  let title = allowOverlay ? 'Hide Companion Extension' : 'Show Companion Extension';
 
   title = props.warning && allowOverlay ? 'The Twitch Video Player is too small.  Please adjust your browser size.' : title;
 
