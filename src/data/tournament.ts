@@ -749,7 +749,7 @@ const defaultTournament: Tournament = {
           "Class": "Bard",
           "ActionSkill": "Throw",
           "ReactionSkill": "Damage Split",
-          "SupportSkill": "Attack UP",
+          "SupportSkill": "Attack Up",
           "MoveSkill": "Move+3",
           "Mainhand": "Bloody Strings",
           "Offhand": "",

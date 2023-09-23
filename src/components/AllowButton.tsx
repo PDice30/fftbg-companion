@@ -1,6 +1,7 @@
 import { BASE_MUSTADIO_URL } from "../constants";
 import { OverlayContext } from "../contexts/OverlayContext";
 import { useContext } from "react";
+import { Tooltip } from "@mui/material";
 
 type AllowButtonProps = {
   warning?: boolean
@@ -9,15 +10,21 @@ type AllowButtonProps = {
 export const AllowButton = (props: AllowButtonProps) => {
   const { allowOverlay, setAllowOverlay } = useContext(OverlayContext);
 
+  let title = allowOverlay ? 'Extension is On' : 'Extension is Off';
+
+  title = props.warning && allowOverlay ? 'The Twitch Video Player is too small.  Please adjust your browser size.' : title;
+
   return (
-    <button
-      className='absolute inset-y-0 right-6 w-12 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'
-      style={{ top: '60%'}}
-      onClick={() => {
-        setAllowOverlay(!allowOverlay);
-      }}>
-        <img className='p-1 mx-auto' 
-          src={BASE_MUSTADIO_URL + (allowOverlay ? (props.warning ? 'items/Scorpion Tail.png' : 'items/Flail.png')  : 'items/Flame Whip.png')} />
-    </button>
+    <Tooltip arrow title={title}>
+      <button
+        className='absolute inset-y-0 right-6 w-12 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'
+        style={{ top: '60%'}}
+        onClick={() => {
+          setAllowOverlay(!allowOverlay);
+        }}>
+          <img className='p-1 mx-auto' 
+            src={BASE_MUSTADIO_URL + (allowOverlay ? (props.warning ? 'items/Scorpion Tail.png' : 'items/Flail.png')  : 'items/Flame Whip.png')} />
+      </button>
+    </Tooltip>
   )
 }

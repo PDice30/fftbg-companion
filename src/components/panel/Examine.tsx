@@ -3,8 +3,13 @@ import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTips } from "../../models";
 import { BASE_IMAGE_URL, NOTABLES } from "../../constants";
 import { getSizeUp } from "../../utils/textHelper";
+import { Tooltip } from "@mui/material";
 
-export const Examine = () => {
+type ExamineProps = {
+  index: number,
+}
+
+export const Examine = (props: ExamineProps) => {
   const [showPointer, setShowPointer] = useState(false);
   const { examineText, toolTips, toolTipType, unit, textSize } = useContext(OverlayContext);
   const scrollRef = useRef(null);
@@ -31,12 +36,15 @@ export const Examine = () => {
 
   switch (toolTipType) {
     case 'ClassSkills':
+      console.log(toolTipType);
       detailDisplay = unit.ClassSkills.map((skill, index) => {
         let style = 'inline-block';
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
-          <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ClassSkills.length) ? '' : ', ')}</p>
+          <Tooltip key={index} title={toolTips['Ability']?.get(skill)} arrow placement='left'>
+            <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ClassSkills.length) ? '' : ', ')}</p>
+          </Tooltip>
         )
       });
       break;
@@ -46,7 +54,9 @@ export const Examine = () => {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
         style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
         return (
-          <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</p>
+          <Tooltip key={index} title={toolTips['Ability']?.get(skill)} arrow placement='left'>
+            <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</p>
+          </Tooltip>
         )
       });
       break;

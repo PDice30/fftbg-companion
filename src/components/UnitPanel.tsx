@@ -11,7 +11,7 @@ import { AbilityText } from "./panel/AbilityText"
 type UnitPanelProps = {
   side: number,
   unit: Unit,
-  index: number // If 0, bump down. If 3, bump up.
+  index: number, // If 0, bump down. If 3, bump up.
 }
 
 // TODO: All text needs sized based on aspect ratio
@@ -39,7 +39,7 @@ export const UnitPanel = (props: UnitPanelProps) => {
 
       <AbilityText />
 
-      <Examine />
+      <Examine index={props.index} />
     </div>
   )
 }
