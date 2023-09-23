@@ -36,7 +36,6 @@ export const Examine = (props: ExamineProps) => {
 
   switch (toolTipType) {
     case 'ClassSkills':
-      console.log(toolTipType);
       detailDisplay = unit.ClassSkills.map((skill, index) => {
         let style = 'inline-block';
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call

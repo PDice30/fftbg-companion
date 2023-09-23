@@ -5,8 +5,6 @@ const getTooltips = async (): Promise<ToolTips> => {
   try {
     const response = (await (await fetch(`${BASE_API_URL}tips`)).json()) as ToolTips;
 
-    console.log(response);
-
     // TODO: Exact map type probably isn't necessary
     if (!response.Ability || !response.Class || !response.Item || !response.MonsterSkills || !response.UserSkill || !response.Zodiac) return {}; 
     const Ability = new Map(Object.entries(response.Ability))
