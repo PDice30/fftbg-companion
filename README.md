@@ -28,6 +28,9 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 
 ## Version History
 
+1.3.0:
+- Adding Tooltips for the Allow Button, and all Class and Extra skills
+
 1.2.0: 
 - Removed Warning overlay and replaced it with a red flail warning icon
 - Added Compatibility stars
