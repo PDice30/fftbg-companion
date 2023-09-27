@@ -39,7 +39,7 @@ export const UnitPanel = (props: UnitPanelProps) => {
 
       <AbilityText />
 
-      <Examine index={props.index} />
+      <Examine />
     </div>
   )
 }

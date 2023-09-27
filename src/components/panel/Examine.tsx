@@ -5,11 +5,7 @@ import { BASE_IMAGE_URL, NOTABLES } from "../../constants";
 import { getSizeUp } from "../../utils/textHelper";
 import { Tooltip } from "@mui/material";
 
-type ExamineProps = {
-  index: number,
-}
-
-export const Examine = (props: ExamineProps) => {
+export const Examine = () => {
   const [showPointer, setShowPointer] = useState(false);
   const { examineText, toolTips, toolTipType, unit, textSize } = useContext(OverlayContext);
   const scrollRef = useRef(null);
