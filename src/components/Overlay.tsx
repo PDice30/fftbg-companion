@@ -15,7 +15,6 @@ const Overlay = () => {
 
   useEffect(() => {    
     // TODO : react-query
-    // If Winners.length === 8: Tournament is over, display "waiting" and wait a set time to call again and show teams
     const fetchData = async () => {
       const data = await getData();
 
@@ -44,16 +43,15 @@ const Overlay = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
-
   // TODO - teams array could just be one to iterate through, and first half float left
   return (
     <div className='w-screen h-screen'
       onMouseOver={() => { setIsButtonVisible(true); }}
       onMouseLeave={() => { setIsButtonVisible(false); }}>
-        { isButtonVisible && 
-          <AllowButton />
-        }
-      {!isIntermission && 
+      { isButtonVisible && 
+        <AllowButton />
+      }
+      { !isIntermission && 
         <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}} >
           <div className={tailwindClasses.panelLeft}>
             {teamOne && teamOne.Units.map((unit, index) => {

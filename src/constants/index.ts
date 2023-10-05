@@ -5,6 +5,7 @@ export const BASE_IMAGE_URL = 'https://fftbg-companion.s3.amazonaws.com/';
 export const BASE_MUSTADIO_URL = 'https://mustadio-images.s3.amazonaws.com/';
 export const BASE_ITEMS_URL = BASE_MUSTADIO_URL + 'items/';
 export const BASE_ZODIAC_URL = BASE_MUSTADIO_URL + 'zodiac/';
+export const BASE_MAPS_URL = BASE_MUSTADIO_URL + 'maps/';
 
 export const LOCAL_ICON_URL = './src/assets/images/icons/';
 export const EQUIPMENT_SLOTS: string[] = ['hand', 'hand', 'head', 'body', 'accessory'];

@@ -17,6 +17,7 @@ const getData = async (): Promise<[Team, Team]> => {
     return [tournament.Teams.red, tournament.Teams.blue];
   } catch {
     // TODO: Better error message/handling
+    console.log(defaultTournament);
     return [defaultTournament.Teams.red, defaultTournament.Teams.blue];
   }
 }
