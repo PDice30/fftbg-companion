@@ -2,7 +2,7 @@
 <img src="https://fftbg-companion.s3.amazonaws.com/fftbg-companion.png" 
      alt="FFTBG Companion Logo" width="128" height="128">
 
-# FFTBG Companion 1.2.0
+# FFTBG Companion 1.4.0
 
 FFTBG Companion is a Twitch Extension Overlay for twitch.tv/fftbattleground. 
 
@@ -27,6 +27,11 @@ Two lines of the index.html file in the dist output need changing.  Both from '/
 The asset link to the Altima.ttf file in the build is incorrect for Twitch asset hosting and needs to be just 'url(./Altima-21192d5e.ttf)' (the 'assets' folder is removed)
 
 ## Version History
+
+1.4.0:
+- Added Tooltips for Class, Monster Class, and Zodiac.
+- Added Configurable Settings and Options
+- Added Current Song - Can also be customized to get a popup when the song changes
 
 1.3.0:
 - Adding Tooltips for the Allow Button, and all Class and Extra skills
