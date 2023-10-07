@@ -6,7 +6,7 @@ import getData from "../utils/dataHelper";
 import getTooltips from "../utils/tooltips";
 import { OverlayContext } from "../contexts/OverlayContext";
 import { AllowButton } from "./AllowButton";
-import { ExtrasPanel } from "./extras/ExtrasPanel";
+import { ExtrasPanel } from "./extras/settings/ExtrasPanel";
 
 const Overlay = () => {
   const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap } = useContext(OverlayContext);
@@ -89,7 +89,7 @@ const tailwindClasses =  {
   overlay: import.meta.env.PROD ? overlay : overlay,
   panelLeft: import.meta.env.PROD ? panelLeft : panelLeft,
   panelRight: import.meta.env.PROD ? panelRight : panelRight,
-  // overlay: import.meta.env.PROD ? overlay : overlay + ' bg-red-100',
+  // overlay: import.meta.env.PROD ? overlay : overlay + ' bg-red-500',
   // panelLeft: import.meta.env.PROD ? panelLeft : panelLeft + ' bg-blue-400 + border-2',
   // panelRight: import.meta.env.PROD ? panelRight : panelRight + ' bg-blue-400',
 

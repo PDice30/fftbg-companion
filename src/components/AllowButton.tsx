@@ -22,8 +22,10 @@ export const AllowButton = (props: AllowButtonProps) => {
         onClick={() => {
           setAllowOverlay(!allowOverlay);
         }}>
-          <img className='p-1 mx-auto' 
-            src={BASE_MUSTADIO_URL + (allowOverlay ? (props.warning ? 'items/Scorpion Tail.png' : 'items/Flail.png')  : 'items/Flame Whip.png')} />
+          <img 
+            className='p-1 mx-auto' 
+            src={BASE_MUSTADIO_URL + (allowOverlay ? (props.warning ? 'items/Scorpion Tail.png' : 'items/Flail.png')  : 'items/Flame Whip.png')} 
+          />
       </button>
     </Tooltip>
     

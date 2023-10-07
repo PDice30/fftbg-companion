@@ -36,6 +36,12 @@ type OverlayContextType = {
   track: string,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setTrack: Function,
+  allowNewTrackPopup: boolean,
+  setAllowNewTrackPopup: Dispatch<SetStateAction<boolean>>,
+  alwaysShowStars: boolean,
+  setAlwaysShowStars: Dispatch<SetStateAction<boolean>>,
+  isPanelTransparent: boolean,
+  setIsPanelTransparent: Dispatch<SetStateAction<boolean>>,
 }
 
 export const OverlayContext = createContext<OverlayContextType>({
@@ -72,6 +78,16 @@ export const OverlayContext = createContext<OverlayContextType>({
   track: '',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setTrack: () => {},
+  allowNewTrackPopup: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setAllowNewTrackPopup: () => {},
+  alwaysShowStars: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setAlwaysShowStars: () => {},
+  isPanelTransparent: false,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setIsPanelTransparent: () => {},
+
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
@@ -86,6 +102,9 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [currentUnits, setCurrentUnits] = useState<Unit[]>([]);
   const [map, setMap] = useState<FFTMap>(defaultMap);
   const [track, setTrack] = useState<string>('');
+  const [allowNewTrackPopup, setAllowNewTrackPopup] = useState<boolean>(false);
+  const [alwaysShowStars, setAlwaysShowStars] = useState<boolean>(false);
+  const [isPanelTransparent, setIsPanelTransparent] = useState<boolean>(false);
 
   return (
     <OverlayContext.Provider
@@ -112,6 +131,12 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
         setMap,
         track,
         setTrack,
+        allowNewTrackPopup,
+        setAllowNewTrackPopup,
+        alwaysShowStars,
+        setAlwaysShowStars,
+        isPanelTransparent,
+        setIsPanelTransparent,
       }}
     >
       {props.children}
