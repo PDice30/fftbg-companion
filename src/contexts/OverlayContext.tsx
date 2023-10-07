@@ -1,6 +1,7 @@
-import { createContext, useState } from "react";
-import { ToolTipType, ToolTips, Unit } from "../models";
+import { Dispatch, SetStateAction, createContext, useState } from "react";
+import { FFTMap, ToolTipType, ToolTips, Unit } from "../models";
 import defaultUnit from "../data/defaultUnit";
+import { defaultMap } from "../data/maps";
 
 type OverlayContextType = {
   unit: Unit,
@@ -30,9 +31,8 @@ type OverlayContextType = {
   currentUnits: Unit[],
   // eslint-disable-next-line @typescript-eslint/ban-types
   setCurrentUnits: Function,
-  mapId: string,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setMapId: Function,
+  map: FFTMap,
+  setMap: Dispatch<SetStateAction<FFTMap>>,
   track: string,
   // eslint-disable-next-line @typescript-eslint/ban-types
   setTrack: Function,
@@ -66,9 +66,9 @@ export const OverlayContext = createContext<OverlayContextType>({
   currentUnits: [],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setCurrentUnits: () => {},
-  mapId: '1',
+  map: defaultMap,
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setMapId: () => {},
+  setMap: () => {},
   track: '',
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setTrack: () => {},
@@ -84,7 +84,7 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [textSize, setTextSize] = useState<string>('text-2xl');
   const [isIntermission, setIsIntermission] = useState<boolean>(false);
   const [currentUnits, setCurrentUnits] = useState<Unit[]>([]);
-  const [mapId, setMapId] = useState<string>('1');
+  const [map, setMap] = useState<FFTMap>(defaultMap);
   const [track, setTrack] = useState<string>('');
 
   return (
@@ -108,8 +108,8 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
         setIsIntermission,
         currentUnits,
         setCurrentUnits,
-        mapId,
-        setMapId,
+        map,
+        setMap,
         track,
         setTrack,
       }}

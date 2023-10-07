@@ -79,8 +79,13 @@ export type Extras = {
   track: string,
 }
 
+export type FFTMap = {
+  mapId: string,
+  mapName: string,
+}
+
 export type DataResponse = {
   teams: [Team, Team],
-  mapId: string, // Maybe int?
+  map: FFTMap,
   extras: Extras,
 }

@@ -1,3 +1,5 @@
+import { FFTMap } from "../models";
+
 export const defaultMaps = 
   [
     "95) Church",
@@ -8,4 +10,9 @@ export const defaultMaps =
     "115) Banished Fort",
     "106) DELTA",
     "99) Main Street of Lesalia"
-  ]
+  ];
+
+export const defaultMap: FFTMap = {
+  mapId: '1',
+  mapName: 'Test Map'
+}

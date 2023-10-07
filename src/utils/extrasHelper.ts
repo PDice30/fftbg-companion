@@ -1,6 +1,6 @@
 import { defaultTrack } from "../data/trackStatus";
 import { BASE_API_URL } from "../constants";
-import { Extras } from "../models";
+import { Extras, FFTMap } from "../models";
 
 const getExtras = async (): Promise<Extras> => {
   try {
@@ -28,14 +28,26 @@ export const getTrackUrl= (track: string): string => {
   return `http://www.youtube.com/results?search_query=${searchableTrackString}`;
 }
 
-export const getMapId = (winners: string[], maps: string[]): string => {
+export const getMap = (winners: string[], maps: string[]): FFTMap => {
   const matchNumber = winners.length;
   if (matchNumber === 8) {
-    return maps[matchNumber - 1].substring(0, maps[matchNumber - 1].indexOf(')'));
+    const mapId = maps[matchNumber - 1].substring(0, maps[matchNumber - 1].indexOf(')'));
+    const mapName = maps[matchNumber - 1];
+    
+    const fftMap: FFTMap = {
+      mapId,
+      mapName,
+    }
+    return fftMap;
   }
-  return maps[matchNumber].substring(0, maps[matchNumber].indexOf(')'));
+  const mapId = maps[matchNumber].substring(0, maps[matchNumber].indexOf(')'));
+  const mapName = maps[matchNumber];
+
+  const fftMap: FFTMap = {
+    mapId,
+    mapName,
+  }
+  return fftMap;
 }
-
-
 
 export default getExtras;

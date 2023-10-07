@@ -9,7 +9,7 @@ import { AllowButton } from "./AllowButton";
 import { ExtrasPanel } from "./extras/ExtrasPanel";
 
 const Overlay = () => {
-  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMapId } = useContext(OverlayContext);
+  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -18,9 +18,10 @@ const Overlay = () => {
     // TODO : react-query
     const fetchData = async () => {
       const data = await getData();
-      
+
       setTrack(data.extras.track);
-      setMapId(data.mapId);
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
+      setMap(data.map);
 
       // TODO: Can be lag of still showing old champs as new tourney starts
       if (data.teams[0].Name === 'Champion Team' && data.teams[1].Name === 'Champion Team') {
