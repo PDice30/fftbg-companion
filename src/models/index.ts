@@ -74,3 +74,13 @@ export type ExamineDetails = {
 }
 
 export type ToolTipType = 'Ability' | 'Class' | 'Item' | 'MonsterSkills' | 'UserSkill' | 'Zodiac' | 'ClassSkills' | 'ExtraSkills'
+
+export type Extras = {
+  track: string,
+}
+
+export type DataResponse = {
+  teams: [Team, Team],
+  mapId: string, // Maybe int?
+  extras: Extras,
+}

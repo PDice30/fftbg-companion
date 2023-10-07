@@ -15,7 +15,7 @@ export const AllowButton = (props: AllowButtonProps) => {
   title = props.warning && allowOverlay ? 'The Twitch Video Player is too small.  Please adjust your browser size.' : title;
 
   return (
-    <Tooltip arrow title={title}>
+    <Tooltip title={title} arrow placement='top'>
       <button
         className='absolute inset-y-0 right-6 w-12 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'
         style={{ top: '60%'}}

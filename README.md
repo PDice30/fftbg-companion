@@ -29,7 +29,7 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 ## Version History
 
 1.4.0:
-- Added Tooltips for Class, Monster Class, and Zodiac.
+- Added Tooltips for Class, Monster Class, and Zodiac. - DONE
 - Added Configurable Settings and Options
 - Added Current Song - Can also be customized to get a popup when the song changes
 - Added ability to view the Map

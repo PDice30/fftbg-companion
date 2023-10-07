@@ -30,6 +30,12 @@ type OverlayContextType = {
   currentUnits: Unit[],
   // eslint-disable-next-line @typescript-eslint/ban-types
   setCurrentUnits: Function,
+  mapId: string,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setMapId: Function,
+  track: string,
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  setTrack: Function,
 }
 
 export const OverlayContext = createContext<OverlayContextType>({
@@ -60,6 +66,12 @@ export const OverlayContext = createContext<OverlayContextType>({
   currentUnits: [],
   // eslint-disable-next-line @typescript-eslint/no-empty-function
   setCurrentUnits: () => {},
+  mapId: '1',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setMapId: () => {},
+  track: '',
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  setTrack: () => {},
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
@@ -72,28 +84,34 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [textSize, setTextSize] = useState<string>('text-2xl');
   const [isIntermission, setIsIntermission] = useState<boolean>(false);
   const [currentUnits, setCurrentUnits] = useState<Unit[]>([]);
+  const [mapId, setMapId] = useState<string>('1');
+  const [track, setTrack] = useState<string>('');
 
   return (
     <OverlayContext.Provider
       value={{ 
-        unit: unit, 
-        setUnit: setUnit, 
-        examineText: examineText,
-        setExamineText: setExamineText,
-        toolTips: toolTips,
-        setToolTips: setToolTips,
-        toolTipType: toolTipType,
-        setToolTipType: setToolTipType,
-        isButtonVisible: isButtonVisible,
-        setIsButtonVisible: setIsButtonVisible,
-        allowOverlay: allowOverlay,
-        setAllowOverlay: setAllowOverlay,
-        textSize: textSize,
-        setTextSize: setTextSize,
-        isIntermission: isIntermission,
-        setIsIntermission: setIsIntermission,
-        currentUnits: currentUnits,
-        setCurrentUnits: setCurrentUnits,
+        unit, 
+        setUnit, 
+        examineText,
+        setExamineText,
+        toolTips,
+        setToolTips,
+        toolTipType,
+        setToolTipType,
+        isButtonVisible,
+        setIsButtonVisible,
+        allowOverlay,
+        setAllowOverlay,
+        textSize,
+        setTextSize,
+        isIntermission,
+        setIsIntermission,
+        currentUnits,
+        setCurrentUnits,
+        mapId,
+        setMapId,
+        track,
+        setTrack,
       }}
     >
       {props.children}

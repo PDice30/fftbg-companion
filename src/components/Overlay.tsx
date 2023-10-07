@@ -6,9 +6,10 @@ import getData from "../utils/dataHelper";
 import getTooltips from "../utils/tooltips";
 import { OverlayContext } from "../contexts/OverlayContext";
 import { AllowButton } from "./AllowButton";
+import { ExtrasPanel } from "./extras/ExtrasPanel";
 
 const Overlay = () => {
-  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits } = useContext(OverlayContext);
+  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMapId } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -17,18 +18,21 @@ const Overlay = () => {
     // TODO : react-query
     const fetchData = async () => {
       const data = await getData();
+      
+      setTrack(data.extras.track);
+      setMapId(data.mapId);
 
       // TODO: Can be lag of still showing old champs as new tourney starts
-      if (data[0].Name === 'Champion Team' && data[1].Name === 'Champion Team') {
+      if (data.teams[0].Name === 'Champion Team' && data.teams[1].Name === 'Champion Team') {
         setIsIntermission(true);
       } else {
         setIsIntermission(false);
       }
 
-      setTeamOne(data[0]);
-      setTeamTwo(data[1]);
+      setTeamOne(data.teams[0]);
+      setTeamTwo(data.teams[1]);
 
-      setCurrentUnits([...data[0].Units, ...data[1].Units]);
+      setCurrentUnits([...data.teams[0].Units, ...data.teams[1].Units]);
     }
 
     const getTips = async () => {
@@ -49,7 +53,10 @@ const Overlay = () => {
       onMouseOver={() => { setIsButtonVisible(true); }}
       onMouseLeave={() => { setIsButtonVisible(false); }}>
       { isButtonVisible && 
-        <AllowButton />
+        <>
+          <AllowButton />
+          <ExtrasPanel extras=""/>
+        </>
       }
       { !isIntermission && 
         <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}} >
