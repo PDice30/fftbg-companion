@@ -12,7 +12,7 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
   const { track, map } = useContext(OverlayContext);
 
   const handleMapClick = () => {
-    window.open(getTrackUrl(track), '_blank');
+    window.open(`https://ffhacktics.com/wiki/MAP${map.mapId}_${map.parsedMapName}`, '_blank');
   }
 
   const handleTrackClick = () => {
@@ -29,7 +29,7 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
       style={{ top: '70%' }}>
       <Tooltip title={
       <>
-        <span>{ map.mapName }</span>
+        <span>{ map.fullMapName }</span>
         <img src={BASE_MUSTADIO_URL + `maps/${map.mapId}_1.gif`}/>
       </>
       } arrow placement='left'>

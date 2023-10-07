@@ -81,7 +81,8 @@ export type Extras = {
 
 export type FFTMap = {
   mapId: string,
-  mapName: string,
+  fullMapName: string,
+  parsedMapName: string,
 }
 
 export type DataResponse = {

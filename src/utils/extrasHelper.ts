@@ -32,22 +32,33 @@ export const getMap = (winners: string[], maps: string[]): FFTMap => {
   const matchNumber = winners.length;
   if (matchNumber === 8) {
     const mapId = maps[matchNumber - 1].substring(0, maps[matchNumber - 1].indexOf(')'));
-    const mapName = maps[matchNumber - 1];
-    
+    const fullMapName = maps[matchNumber - 1];
+    const parsedMapName = parseMapName(fullMapName);
+
     const fftMap: FFTMap = {
       mapId,
-      mapName,
+      fullMapName,
+      parsedMapName
     }
     return fftMap;
   }
+
   const mapId = maps[matchNumber].substring(0, maps[matchNumber].indexOf(')'));
-  const mapName = maps[matchNumber];
+  const fullMapName = maps[matchNumber];
+  const parsedMapName = parseMapName(fullMapName);
 
   const fftMap: FFTMap = {
     mapId,
-    mapName,
+    fullMapName,
+    parsedMapName,
   }
   return fftMap;
+}
+
+const parseMapName = (fullMapName: string): string => {
+  const string = fullMapName.substring(fullMapName.indexOf(')') + 1).trim();
+  console.log(string);
+  return fullMapName.substring(fullMapName.indexOf(')') + 1).trimEnd();
 }
 
 export default getExtras;

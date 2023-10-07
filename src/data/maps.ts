@@ -14,5 +14,6 @@ export const defaultMaps =
 
 export const defaultMap: FFTMap = {
   mapId: '1',
-  mapName: 'Test Map'
+  fullMapName: '1) Test Map',
+  parsedMapName: 'Test Map',
 }
