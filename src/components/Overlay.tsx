@@ -7,9 +7,10 @@ import getTooltips from "../utils/tooltips";
 import { OverlayContext } from "../contexts/OverlayContext";
 import { AllowButton } from "./AllowButton";
 import { ExtrasPanel } from "./extras/settings/ExtrasPanel";
+import { TrackPopup } from "./TrackPopup";
 
 const Overlay = () => {
-  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap } = useContext(OverlayContext);
+  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap, allowNewTrackPopup } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -50,32 +51,37 @@ const Overlay = () => {
   
   // TODO - teams array could just be one to iterate through, and first half float left
   return (
-    <div className='w-screen h-screen'
-      onMouseOver={() => { setIsButtonVisible(true); }}
-      onMouseLeave={() => { setIsButtonVisible(false); }}>
-      { isButtonVisible && 
-        <>
-          <AllowButton />
-          <ExtrasPanel extras=""/>
-        </>
-      }
-      { !isIntermission && 
-        <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}} >
-          <div className={tailwindClasses.panelLeft}>
-            {teamOne && teamOne.Units.map((unit, index) => {
-              return (
-                <Portrait key={unit.Name} unit={unit} side={1} index={index}/>
-              )
-            })}
+    <div>
+      <div className='w-screen h-screen'
+        onMouseOver={() => { setIsButtonVisible(true); }}
+        onMouseLeave={() => { setIsButtonVisible(false); }}>
+        { isButtonVisible && 
+          <>
+            <AllowButton />
+            <ExtrasPanel extras=""/>
+          </>
+        }
+        { !isIntermission && 
+          <div className={tailwindClasses.overlay} style={{fontFamily: 'Altima', fontSize: '30px'}} >
+            <div className={tailwindClasses.panelLeft}>
+              {teamOne && teamOne.Units.map((unit, index) => {
+                return (
+                  <Portrait key={unit.Name} unit={unit} side={1} index={index}/>
+                )
+              })}
+            </div>
+            <div className={tailwindClasses.panelRight}>
+              {teamTwo && teamTwo.Units.map((unit, index) => {
+                return (
+                  <Portrait key={unit.Name} unit={unit} side={2} index={index + 4}/>
+                )
+              })}
+            </div>
           </div>
-          <div className={tailwindClasses.panelRight}>
-            {teamTwo && teamTwo.Units.map((unit, index) => {
-              return (
-                <Portrait key={unit.Name} unit={unit} side={2} index={index + 4}/>
-              )
-            })}
-          </div>
-        </div>
+        }
+      </div>
+      { allowNewTrackPopup && 
+        <TrackPopup />
       }
     </div>
   )

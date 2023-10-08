@@ -35,6 +35,13 @@ div {
   overflow-y: scroll;
 }
 
+.track-popup {
+  animation-name: trackPopupAnimation;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+}
+
 @keyframes enterFromRight {
   from {
     margin-left: 10px;
@@ -62,5 +69,35 @@ div {
 
   to {
     margin-top: 10px;
+  }
+}
+
+@keyframes trackPopupAnimation {
+  from {
+    opacity: 0;
+    position: absolute;
+    bottom: 25px;
+    /* left: '15%'; */
+  }
+
+  20% {
+    opacity: 1;
+    position: absolute;
+    bottom: 50px;
+    /* left: 350px; */
+  }
+
+  80% {
+    opacity: 1;
+    position: absolute;
+    bottom: 50px;
+    /* left: 350px; */
+  }
+
+  to {
+    opacity: 0;
+    position: absolute;
+    bottom: 25px;
+    /* left: 350px; */
   }
 }
