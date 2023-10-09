@@ -1,3 +1,4 @@
+import { getSizeUp } from "../utils/textHelper";
 import { BASE_MUSTADIO_URL } from "../constants";
 import { OverlayContext } from "../contexts/OverlayContext";
 import { useContext } from "react";
@@ -5,8 +6,8 @@ import { useContext } from "react";
 export const TrackPopup = () => {
   const { track, textSize } = useContext(OverlayContext);
 
-  const trimmedTrack = track.substring(0, 75);
-  const trimmed = track.length > 75 ? '...' : '';
+  const trimmedTrack = track.substring(0, 60);
+  const trimmed = track.length > 60 ? '...' : '';
 
   return (
     <div style={{ left: '20%' }} className='w-2/5 h-12 track-popup absolute text-center overflow-hidden bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
@@ -15,7 +16,7 @@ export const TrackPopup = () => {
         src={BASE_MUSTADIO_URL + 'items/Fairy Harp.png'} 
       />
       <div className='align-middle text-center pt-1'>
-        <span className={textSize}>{trimmedTrack}{trimmed}</span>
+        <span className={getSizeUp(textSize)}>{trimmedTrack}{trimmed}</span>
       </div>
       {/* <img 
         className='absolute align-middle items-center right-0 bottom-0 pr-4 pt-2 pb-2' 

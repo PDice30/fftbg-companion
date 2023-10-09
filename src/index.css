@@ -37,7 +37,7 @@ div {
 
 .track-popup {
   animation-name: trackPopupAnimation;
-  animation-duration: 10s;
+  animation-duration: 8s;
   animation-direction: alternate;
   animation-fill-mode: forwards;
 }
