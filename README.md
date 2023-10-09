@@ -30,9 +30,9 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 
 1.4.0:
 - Added Tooltips for Class, Monster Class, and Zodiac. - DONE
-- Added Configurable Settings and Options
-- Added Current Song - Can also be customized to get a popup when the song changes
-- Added ability to view and rotate the Map.  Clicking it links out to FFHacktics map page.
+- Added Configurable Settings and Options - DONE
+- Added Current Song - Can also be customized to get a popup when the song changes - API needed
+- Added ability to view and rotate the Map.  Clicking it links out to FFHacktics map page. - DONE
 - Updated Notable list
 
 

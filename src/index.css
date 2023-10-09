@@ -76,28 +76,28 @@ div {
   from {
     opacity: 0;
     position: absolute;
-    bottom: 25px;
+    top: 15px;
     /* left: '15%'; */
   }
 
-  20% {
+  10% {
     opacity: 1;
     position: absolute;
-    bottom: 50px;
+    top: 30px;
     /* left: 350px; */
   }
 
-  80% {
+  90% {
     opacity: 1;
     position: absolute;
-    bottom: 50px;
+    top: 30px;
     /* left: 350px; */
   }
 
   to {
     opacity: 0;
     position: absolute;
-    bottom: 25px;
+    top: 15px;
     /* left: 350px; */
   }
 }
