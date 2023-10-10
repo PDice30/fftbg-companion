@@ -23,12 +23,14 @@ export const PanelText = (props: PanelTextProps) => {
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-return
     <div className={textStyle} 
-      onClick={() => {
+      
+    >
+      <button onClick={() => {
         setExamineText(examineText.replace('*', ''));
         setToolTipType(props.toolTipType);
-      }}
-    >
-      {text}
+      }}>
+        {text}
+      </button>
     </div>
   )
 }

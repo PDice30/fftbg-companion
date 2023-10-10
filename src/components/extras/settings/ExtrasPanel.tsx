@@ -15,10 +15,6 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
   const [showSettingsPanel, setShowSettingsPanel] = useState<boolean>(false);
   const [showSettingsTooltip, setShowSettingsTooltip] = useState<boolean>(false);
 
-  const handleMapClick = () => {
-    window.open(`https://ffhacktics.com/wiki/MAP${map.mapId}_${map.parsedMapName}`, '_blank');
-  }
-
   const handleTrackClick = () => {
     window.open(getTrackUrl(track), '_blank');
   }
@@ -58,9 +54,9 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
         } 
         arrow 
         placement='left'>
-          <button className='pt-2 ml-2' onClick={handleMapClick}>
+          <div className='pt-2 ml-2'>
             <img src={BASE_MUSTADIO_URL + 'items/Papyrus Codex.png' } />
-          </button>
+          </div>
       </Tooltip>
       <Tooltip title={track} arrow placement='left'>
         <button className='pt-2 pl-3' onClick={handleTrackClick}>

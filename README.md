@@ -35,6 +35,10 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 - Added ability to view and rotate the Map.  Clicking it links out to FFHacktics map page
 - Updated Notable list - TODO
 
+- Todo:
+     - blue dragon doesnt display, space?
+     - Add Buttons to all items and abilities for extra info
+
 
 1.3.0:
 - Adding Tooltips for the Allow Button, and all Class and Extra skills
