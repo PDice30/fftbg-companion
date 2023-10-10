@@ -18,10 +18,10 @@ export const TrackPopup = () => {
       <div className='align-middle text-center pt-1'>
         <span className={getSizeUp(textSize)}>{trimmedTrack}{trimmed}</span>
       </div>
-      {/* <img 
+      <img 
         className='absolute align-middle items-center right-0 bottom-0 pr-4 pt-2 pb-2' 
         src={BASE_MUSTADIO_URL + 'items/Fairy Harp.png'} 
-      /> */}
+      />
     </div>
   );
 }

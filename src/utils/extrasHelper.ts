@@ -24,7 +24,7 @@ const parseTrack = (trackString: string): string => {
 }
 
 export const getTrackUrl= (track: string): string => {
-  const searchableTrackString = track.replaceAll(' ', '+');
+  const searchableTrackString = track.replaceAll(' ', '+').replaceAll('&', '');
   return `http://www.youtube.com/results?search_query=${searchableTrackString}`;
 }
 
@@ -35,24 +35,22 @@ export const getMap = (winners: string[], maps: string[]): FFTMap => {
     const fullMapName = maps[matchNumber - 1];
     const parsedMapName = parseMapName(fullMapName);
 
-    const fftMap: FFTMap = {
+    return {
       mapId,
       fullMapName,
       parsedMapName
-    }
-    return fftMap;
+    } as FFTMap;
   }
 
   const mapId = maps[matchNumber].substring(0, maps[matchNumber].indexOf(')'));
   const fullMapName = maps[matchNumber];
   const parsedMapName = parseMapName(fullMapName);
 
-  const fftMap: FFTMap = {
+  return {
     mapId,
     fullMapName,
     parsedMapName,
-  }
-  return fftMap;
+  } as FFTMap;
 }
 
 const parseMapName = (fullMapName: string): string => {

@@ -59,7 +59,7 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
           </div>
       </Tooltip>
       <Tooltip title={track} arrow placement='left'>
-        <button className='pt-2 pl-3' onClick={handleTrackClick}>
+        <button className='pt-4 pl-3' onClick={handleTrackClick}>
           <img className='align-middle items-center' src={BASE_MUSTADIO_URL + 'items/Lamia Harp.png' } />
         </button>
       </Tooltip>
@@ -72,7 +72,7 @@ export const ExtrasPanel = (props: ExtrasPanelProps) => {
           arrow 
           placement='left'>
             <button onClick={handleSettingsClick}>
-              <img className='p-2' src={BASE_MUSTADIO_URL + 'icons/status.png' } />
+              <img className='px-2 py-3' src={BASE_MUSTADIO_URL + 'icons/status.png' } />
             </button>
         </Tooltip>
         <SettingsPanel showSettingsPanel={showSettingsPanel} setShowSettingsPanel={setShowSettingsPanel} />
