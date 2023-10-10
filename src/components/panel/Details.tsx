@@ -14,13 +14,7 @@ export const Details = () => {
     nameStyle += ' font-extrabold';
   }
 
-  let classTooltip = unit.Gender === 'Monster' ? unit.Class : unit.Class + ' ' + unit.Gender;
-
-  if (classTooltip === 'Time Mage Male') {
-    classTooltip = 'TimeMage Male';
-  } else if (classTooltip === 'Time Mage Female') {
-    classTooltip = 'TimeMage Female';
-  }
+  const classTooltip = unit.Class.replaceAll(' ', '') + (unit.Gender === 'Monster' ? '' : ' ' + unit.Gender);
 
   // TODO: More interesting details panel
   return (
