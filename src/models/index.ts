@@ -76,13 +76,20 @@ export type ExamineDetails = {
 export type ToolTipType = 'Ability' | 'Class' | 'Item' | 'MonsterSkills' | 'UserSkill' | 'Zodiac' | 'ClassSkills' | 'ExtraSkills'
 
 export type Extras = {
-  track: string,
+  trackTitle: string,
 }
 
 export type FFTMap = {
   mapId: string,
   fullMapName: string,
   parsedMapName: string,
+}
+
+export type Track = {
+  Title: string,
+  Start: string, // might be datetimes
+  End: string,
+  LastMod: string,
 }
 
 export type DataResponse = {

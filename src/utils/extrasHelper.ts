@@ -1,26 +1,22 @@
 import { defaultTrack } from "../data/trackStatus";
-import { BASE_API_URL } from "../constants";
-import { Extras, FFTMap } from "../models";
+import { BASE_TRACK_URL } from "../constants";
+import { Extras, FFTMap, Track } from "../models";
 
 const getExtras = async (): Promise<Extras> => {
   try {
-    const currentTrack = (await (await fetch(`${BASE_API_URL}track`)).json() as string);
+    const currentTrack = (await (await fetch(`${BASE_TRACK_URL}`)).json() as Track);
     const extras: Extras = {
-      track: parseTrack(currentTrack),
+      trackTitle: currentTrack.Title,
     }
     return extras;
   } catch {
     console.log('Error getting current track');
     console.log(getTrackUrl(parseTrack(defaultTrack)));
     const extras: Extras = {
-      track: parseTrack(defaultTrack),
+      trackTitle:parseTrack(defaultTrack),
     }
     return extras;
   }
-}
-
-const parseTrack = (trackString: string): string => {
-  return trackString.substring(1, trackString.indexOf('"', 2));
 }
 
 export const getTrackUrl= (track: string): string => {
@@ -57,6 +53,11 @@ const parseMapName = (fullMapName: string): string => {
   const string = fullMapName.substring(fullMapName.indexOf(')') + 1).trim();
   console.log(string);
   return fullMapName.substring(fullMapName.indexOf(')') + 1).trimEnd();
+}
+
+// Only needed if retreiving full string from dump
+const parseTrack = (trackString: string): string => {
+  return trackString.substring(1, trackString.indexOf('"', 2));
 }
 
 export default getExtras;

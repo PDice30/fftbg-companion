@@ -20,7 +20,7 @@ const Overlay = () => {
     const fetchData = async () => {
       const data = await getData();
 
-      setTrack(data.extras.track);
+      setTrack(data.extras.trackTitle);
       // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       setMap(data.map);
 
