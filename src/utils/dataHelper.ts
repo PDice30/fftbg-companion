@@ -16,7 +16,6 @@ const getData = async (): Promise<DataResponse> => {
     const map = getMap(tournament.Winners, tournament.Maps);
 
     const extras = await getExtras();
-    console.log(extras.trackTitle);
 
     if (matchup) {
       const response: DataResponse = {
@@ -37,7 +36,6 @@ const getData = async (): Promise<DataResponse> => {
     return response;
   } catch {
     const extras = await getExtras();
-    console.log(extras.trackTitle);
 
     const response: DataResponse = {
       teams: [defaultTournament.Teams.red, defaultTournament.Teams.blue],
