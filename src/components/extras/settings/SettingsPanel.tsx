@@ -39,7 +39,7 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
     <div onMouseLeave={() => props.setShowSettingsPanel(false)}>
       {props.showSettingsPanel &&
         <div className='absolute right-12 -bottom-0 w-36 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
-          <Tooltip title={songPopupTitle} arrow placement='bottom'>
+          <Tooltip title={songPopupTitle} arrow placement='top'>
             <button className='pt-1 pl-3' onClick={handleAllowNewTrackPopup}>
               <img 
                 className='align-middle items-center' 
@@ -47,7 +47,7 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
               />
             </button>
           </Tooltip>
-          <Tooltip title={compatibilityStarsTitle} arrow placement='bottom'>
+          <Tooltip title={compatibilityStarsTitle} arrow placement='top'>
             <button className='pt-1 pl-4' onClick={handleAlwaysShowStars}>
               <img 
                 className='align-middle items-center' 
@@ -55,7 +55,7 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
               />
             </button>
           </Tooltip>
-          <Tooltip title={panelOpacityTitle} arrow placement='bottom'>
+          <Tooltip title={panelOpacityTitle} arrow placement='top'>
             <button className='pt-1 pl-4' onClick={handleIsPanelTransparent}>
               <div style={{ opacity: transparentClass}}>
                 <img 
