@@ -5,11 +5,7 @@ import { OverlayContext } from "../../../contexts/OverlayContext";
 import { getTrackUrl } from "../../../utils/extrasHelper";
 import { SettingsPanel } from "./SettingsPanel";
 
-type ExtrasPanelProps = {
-  extras: string;
-}
-
-export const ExtrasPanel = (props: ExtrasPanelProps) => {
+export const ExtrasPanel = () => {
   const { track, map } = useContext(OverlayContext);
   const [mapOrientation, setMapOrientation] = useState<number>(1);
   const [showSettingsPanel, setShowSettingsPanel] = useState<boolean>(false);

@@ -58,7 +58,7 @@ const Overlay = () => {
         { isButtonVisible && 
           <>
             <AllowButton />
-            <ExtrasPanel extras=""/>
+            <ExtrasPanel />
           </>
         }
         { !isIntermission && 

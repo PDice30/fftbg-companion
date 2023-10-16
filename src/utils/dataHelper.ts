@@ -1,5 +1,5 @@
 import { BASE_API_URL } from "../constants";
-import { DataResponse, Team, Tournament } from "../models";
+import { DataResponse, Tournament } from "../models";
 import defaultTournament from "../data/tournament";
 import determineMatchup from "./matchup";
 import getExtras, { getMap } from "./extrasHelper";
