@@ -16,7 +16,6 @@ export const Details = () => {
 
   const classTooltip = unit.Class.replaceAll(' ', '') + (unit.Gender === 'Monster' ? '' : ' ' + unit.Gender);
 
-  // TODO: More interesting details panel
   return (
     <div className={'h-full w-3/16 float-left px-2 ' + textSize}>
       <div className={nameStyle}>{name}</div>

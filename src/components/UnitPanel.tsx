@@ -16,11 +16,7 @@ type UnitPanelProps = {
   index: number, // If 0, bump down. If 3, bump up.
 }
 
-// TODO: All text needs sized based on aspect ratio
-// TODO: Multiple borders with different colors
-
 export const UnitPanel = (props: UnitPanelProps) => {
-  // TODO: refactor the style
   const { isPanelTransparent } = useContext(OverlayContext);
 
   const opacity = isPanelTransparent ? '0.8' : '1.0';

@@ -6,7 +6,6 @@ import { OverlayContext } from "../../contexts/OverlayContext"
 export const AbilityIcons = () => {
   const { unit, toolTips } = useContext(OverlayContext);
   
-  // TODO: cleanup undefined type logic
   const isMonster = unit.Gender === 'Monster';
   let monsterAbilities: string[] | undefined = [];
 
