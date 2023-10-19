@@ -18,11 +18,6 @@ const getExtras = async (): Promise<Extras> => {
   }
 }
 
-export const getTrackUrl= (track: string): string => {
-  const searchableTrackString = track.replaceAll(' ', '+').replaceAll('&', '');
-  return `http://www.youtube.com/results?search_query=${searchableTrackString}`;
-}
-
 export const getMap = (winners: string[], maps: string[]): FFTMap => {
   const matchNumber = winners.length;
   if (matchNumber === 8) {

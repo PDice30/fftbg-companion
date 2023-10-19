@@ -2,7 +2,6 @@ import { Tooltip } from "@mui/material";
 import { BASE_IMAGE_URL, BASE_MUSTADIO_URL } from "../../../constants";
 import { useContext, useState } from "react";
 import { OverlayContext } from "../../../contexts/OverlayContext";
-import { getTrackUrl } from "../../../utils/extrasHelper";
 import { SettingsPanel } from "./SettingsPanel";
 
 export const ExtrasPanel = () => {
@@ -10,10 +9,6 @@ export const ExtrasPanel = () => {
   const [mapOrientation, setMapOrientation] = useState<number>(1);
   const [showSettingsPanel, setShowSettingsPanel] = useState<boolean>(false);
   const [showSettingsTooltip, setShowSettingsTooltip] = useState<boolean>(false);
-
-  const handleTrackClick = () => {
-    window.open(getTrackUrl(track), '_blank');
-  }
 
   const handleSettingsClick = () => {
     setShowSettingsTooltip(false);
@@ -55,9 +50,9 @@ export const ExtrasPanel = () => {
           </div>
       </Tooltip>
       <Tooltip title={track} arrow placement='left'>
-        <button className='pt-4 pl-3' onClick={handleTrackClick}>
+        <div className='pt-4 pl-3'>
           <img className='align-middle items-center' src={BASE_MUSTADIO_URL + 'items/Lamia Harp.png' } />
-        </button>
+        </div>
       </Tooltip>
       <div> 
         <Tooltip 
