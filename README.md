@@ -27,9 +27,9 @@ Special thanks goes to Dice_the_Vice and all the Viceroys!
 Initially, a user must first click the Show Extension button on the right side of the screen to enable FFTBG Companion.
 This can be turned back off by clicking it again.
 <img src="https://fftbg-companion.s3.amazonaws.com/ShowExtension.png" 
-     alt="FFTBG Companion Logo" width="256" height="128">
+     alt="FFTBG Companion Logo" width="128" height="64">
 <img src="https://fftbg-companion.s3.amazonaws.com/HideExtension.png" 
-alt="FFTBG Companion Logo" width="256" height="128">
+alt="FFTBG Companion Logo" width="128" height="64">
 
 General Overlay Panel - Displays unit's stats, equipment, and abilities.  Abilities and Equipment can be clicked on for more details.  Primary abilities and secondary abilities (ex: Yin Yang Magic and Battle Skill) can be further examined in a new panel that displays to the right.  Hovering over them presents a tooltip.
 <img src="https://fftbg-companion.s3.amazonaws.com/Demo.png" 
