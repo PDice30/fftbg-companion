@@ -22,6 +22,11 @@ For any feedback, feel free to email me @ pdice30@gmail.com or message me on Dis
 
 Special thanks goes to Dice_the_Vice and all the Viceroys!
 
+## Usage
+
+<img src="https://fftbg-companion.s3.amazonaws.com/Demo.png" 
+     alt="FFTBG Companion Logo" width="512" height="128">
+
 ## Build Notes (for me, or you, I guess)
 Two lines of the index.html file in the dist output need changing.  Both from '/assets/' to './assets/'.
 The asset link to the Altima.ttf file in the build is incorrect for Twitch asset hosting and needs to be just 'url(./Altima-21192d5e.ttf)' (the 'assets' folder is removed)
