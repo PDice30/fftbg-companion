@@ -35,7 +35,7 @@ alt="FFTBG Companion Logo" width="180" height="48">
 
 Overlay Panel 
 - Hovering over the Book shows the current map - the Rotate button can be used to see all four sides of the map
-- Hovering over the Harp shows the currnet song
+- Hovering over the Harp shows the current song
 - Clicking on the question mark displays additonal settings and options
 
 
