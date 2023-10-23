@@ -18,6 +18,7 @@ From the channels' about page: FFTBattleground is an automated stream of continu
 * **TheKillerNacho**: Operator of the FFTBattleground Twitch channel.
 * **SirBraneDamuj**: Creator of mustad.io and allowing me the use of their AWS S3 asset hosting.  Also general inspiration from mustad.io (Great site, check it out!).
 * **FinneyBussa**: (github.com/bnowak008) Brilliant web dev and all around good dude.  Assisted in back end proxy hosting and debugging.
+
 For any feedback, feel free to email me @ pdice30@gmail.com or message me on Discord (pdice30).
 
 Special thanks goes to Dice_the_Vice and all the Viceroys!
