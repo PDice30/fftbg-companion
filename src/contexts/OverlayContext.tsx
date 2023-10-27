@@ -5,37 +5,27 @@ import { defaultMap } from "../data/maps";
 
 type OverlayContextType = {
   unit: Unit,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setUnit: Function,
+  setUnit:  Dispatch<SetStateAction<Unit>>,
   examineText: string,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setExamineText: Function,
+  setExamineText:  Dispatch<SetStateAction<string>>,
   toolTips: ToolTips,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setToolTips: Function,
+  setToolTips:  Dispatch<SetStateAction<ToolTips>>,
   toolTipType: ToolTipType,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setToolTipType: Function,
+  setToolTipType:  Dispatch<SetStateAction<ToolTipType>>,
   isButtonVisible: boolean,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setIsButtonVisible: Function,
+  setIsButtonVisible:  Dispatch<SetStateAction<boolean>>,
   allowOverlay: boolean,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setAllowOverlay: Function,
+  setAllowOverlay:  Dispatch<SetStateAction<boolean>>,
   textSize: string,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setTextSize: Function,
+  setTextSize:  Dispatch<SetStateAction<string>>,
   isIntermission: boolean,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setIsIntermission: Function,
+  setIsIntermission:  Dispatch<SetStateAction<boolean>>,
   currentUnits: Unit[],
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setCurrentUnits: Function,
+  setCurrentUnits:  Dispatch<SetStateAction<Unit[]>>,
   map: FFTMap,
   setMap: Dispatch<SetStateAction<FFTMap>>,
   track: string,
-  // eslint-disable-next-line @typescript-eslint/ban-types
-  setTrack: Function,
+  setTrack:  Dispatch<SetStateAction<string>>,
   allowNewTrackPopup: boolean,
   setAllowNewTrackPopup: Dispatch<SetStateAction<boolean>>,
   alwaysShowStars: boolean,
@@ -46,48 +36,33 @@ type OverlayContextType = {
 
 export const OverlayContext = createContext<OverlayContextType>({
   unit: defaultUnit,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setUnit: () => {},
+  setUnit: () => { defaultUnit },
   examineText: '',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setExamineText: () => {},
+  setExamineText: () => { '' },
   toolTips: { },
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setToolTips: () => {},
+  setToolTips: () => { { /* empty */ } },
   toolTipType: 'Ability',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setToolTipType: () => {},
+  setToolTipType: () => { 'Ability' },
   isButtonVisible: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setIsButtonVisible: () => {},
+  setIsButtonVisible: () => { false },
   allowOverlay: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setAllowOverlay: () => {},
+  setAllowOverlay: () => { false },
   textSize: 'text-2xl',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setTextSize: () => {},
+  setTextSize: () => { 'text-2xl' },
   isIntermission: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setIsIntermission: () => {},
+  setIsIntermission: () => { false },
   currentUnits: [],
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setCurrentUnits: () => {},
+  setCurrentUnits: () => { [] },
   map: defaultMap,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setMap: () => {},
+  setMap: () => { defaultMap },
   track: '',
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setTrack: () => {},
+  setTrack: () => { '' },
   allowNewTrackPopup: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setAllowNewTrackPopup: () => {},
+  setAllowNewTrackPopup: () => { false },
   alwaysShowStars: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setAlwaysShowStars: () => {},
+  setAlwaysShowStars: () => { false },
   isPanelTransparent: false,
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  setIsPanelTransparent: () => {},
-
+  setIsPanelTransparent: () => { false },
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
