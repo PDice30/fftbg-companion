@@ -78,6 +78,13 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 
 ## Version History
 
+1.4.1:
+- Updated Notable List
+- Added Track scrolling on Popup
+- New Track Popup defaults to On
+- Removed hidden feature update until it's released
+- Fixed some various text and character encoding bugs
+
 1.4.0:
 - Added Tooltips for Class, Monster Class, and Zodiac
 - Added Configurable Settings and Options
