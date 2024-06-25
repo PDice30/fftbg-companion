@@ -17,7 +17,7 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
 
   const songPopupTitle = allowNewTrackPopup ? 'Hide new song popup' : 'Show new song popup';
   // const compatibilityStarsTitle = alwaysShowStars ? 'Hide stars without hover' : 'Show stars without hover';
-  const compatibilityStarsTitle = 'Coming in the next version!';
+  // const compatibilityStarsTitle = 'Coming in the next version!';
   const panelOpacityTitle = isPanelTransparent ? 'Make unit panel Opaque' : 'Make unit panel Transparent';
 
   const transparentClass = isPanelTransparent ? '0.5' : '1.0';
@@ -26,9 +26,9 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
     setAllowNewTrackPopup(!allowNewTrackPopup);
   }
 
-  const handleAlwaysShowStars = () => {
-    setAlwaysShowStars(!alwaysShowStars);
-  }
+  // const handleAlwaysShowStars = () => {
+  //   setAlwaysShowStars(!alwaysShowStars);
+  // }
 
   const handleIsPanelTransparent = () => {
     setIsPanelTransparent(!isPanelTransparent);
@@ -38,20 +38,20 @@ export const SettingsPanel = (props: SettingsPanelProps) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-return
     <div onMouseLeave={() => props.setShowSettingsPanel(false)}>
       {props.showSettingsPanel &&
-        <div className='absolute right-12 -bottom-0 w-36 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
+        <div className='absolute right-12 -bottom-0 w-24 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
+          {/* <Tooltip title={compatibilityStarsTitle} arrow placement='top'>
+            <button className='pt-1 pl-4' onClick={handleAlwaysShowStars}>
+              <img 
+                className='align-middle items-center' 
+                src={BASE_MUSTADIO_URL + (alwaysShowStars ? 'zodiac/5star.png' : 'zodiac/1star.png')} 
+              />
+            </button>
+          </Tooltip> */}
           <Tooltip title={songPopupTitle} arrow placement='top'>
             <button className='pt-1 pl-3' onClick={handleAllowNewTrackPopup}>
               <img 
                 className='align-middle items-center' 
                 src={BASE_MUSTADIO_URL + (allowNewTrackPopup ? 'items/Fairy Harp.png' : 'items/Bloody Strings.png')} 
-              />
-            </button>
-          </Tooltip>
-          <Tooltip title={compatibilityStarsTitle} arrow placement='top'>
-            <button className='pt-1 pl-4' onClick={handleAlwaysShowStars}>
-              <img 
-                className='align-middle items-center' 
-                src={BASE_MUSTADIO_URL + (alwaysShowStars ? 'zodiac/5star.png' : 'zodiac/1star.png')} 
               />
             </button>
           </Tooltip>

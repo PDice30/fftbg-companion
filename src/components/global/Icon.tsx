@@ -9,12 +9,17 @@ type IconProps = {
   type: IconType;
   padding?: string;
   style?: string;
+  flip?: boolean;
 }
 
 export const Icon = (iconProps: IconProps) => {
   const { setExamineText, setToolTipType } = useContext(OverlayContext);
   const padding = iconProps.padding ? iconProps.padding : 'p-1';
-  const style = iconProps.style ? iconProps.style : `h-1/6 items-center mx-auto ${padding}`;
+  let style = iconProps.style ? iconProps.style : `h-1/6 items-center mx-auto ${padding}`;
+
+  if (iconProps.flip) style += ' scale-x-[-1]';
+
+  console.log(style);
 
   let url;
 

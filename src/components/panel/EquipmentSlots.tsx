@@ -18,7 +18,7 @@ export const EquipmentSlots = () => {
       :
         <>
           <Icon name='hand' padding={'p-2'} type='Base' />
-          <Icon name='hand' padding={'p-2'} type='Base' />
+          <Icon name='hand' padding={'p-2'} type='Base' flip={true} />
         </>
       }
       <Icon name='head' padding={'p-2'} type='Base' />
