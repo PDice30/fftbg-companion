@@ -10,7 +10,7 @@ import { ExtrasPanel } from "./extras/settings/ExtrasPanel";
 import { TrackPopup } from "./TrackPopup";
 
 const Overlay = () => {
-  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap, allowNewTrackPopup } = useContext(OverlayContext);
+  const { setToolTips, isButtonVisible, setIsButtonVisible, isIntermission, setIsIntermission, setCurrentUnits, setTrack, setMap, allowNewTrackPopup, setIntervalId } = useContext(OverlayContext);
   const [teamOne, setTeamOne] = useState<Team>();
   const [teamTwo, setTeamTwo] = useState<Team>();
   // const [storedId, setStoredId] = useState<number>(0);
@@ -18,6 +18,7 @@ const Overlay = () => {
   useEffect(() => {    
     // TODO : react-query
     const fetchData = async () => {
+      // setDataHasBeenFetched(true);
       const data = await getData();
 
       setTrack(data.extras.trackTitle);
@@ -42,10 +43,11 @@ const Overlay = () => {
       setToolTips(data);
     }
 
-    setInterval(() => void fetchData(), 5000);
+    setIntervalId(window.setInterval(() => void fetchData(), 5000));
 
     void getTips();
     void fetchData(); // TODO
+    
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   

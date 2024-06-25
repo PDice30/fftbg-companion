@@ -32,6 +32,10 @@ type OverlayContextType = {
   setAlwaysShowStars: Dispatch<SetStateAction<boolean>>,
   isPanelTransparent: boolean,
   setIsPanelTransparent: Dispatch<SetStateAction<boolean>>,
+  dataHasBeenFetched: boolean,
+  setDataHasBeenFetched: Dispatch<SetStateAction<boolean>>,
+  intervalId: number,
+  setIntervalId: Dispatch<SetStateAction<number>>,
 }
 
 export const OverlayContext = createContext<OverlayContextType>({
@@ -63,6 +67,10 @@ export const OverlayContext = createContext<OverlayContextType>({
   setAlwaysShowStars: () => { false },
   isPanelTransparent: false,
   setIsPanelTransparent: () => { false },
+  dataHasBeenFetched: false,
+  setDataHasBeenFetched: () => { false },
+  intervalId: 0,
+  setIntervalId: () => { 0 },
 });
 
 export const OverlayProvider = (props: React.PropsWithChildren) => {
@@ -80,6 +88,8 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [allowNewTrackPopup, setAllowNewTrackPopup] = useState<boolean>(false);
   const [alwaysShowStars, setAlwaysShowStars] = useState<boolean>(false);
   const [isPanelTransparent, setIsPanelTransparent] = useState<boolean>(false);
+  const [dataHasBeenFetched, setDataHasBeenFetched] = useState<boolean>(false);
+  const [intervalId, setIntervalId] = useState<number>(0);
 
   return (
     <OverlayContext.Provider
@@ -112,6 +122,10 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
         setAlwaysShowStars,
         isPanelTransparent,
         setIsPanelTransparent,
+        dataHasBeenFetched,
+        setDataHasBeenFetched,
+        intervalId,
+        setIntervalId,
       }}
     >
       {props.children}

@@ -8,7 +8,7 @@ type AllowButtonProps = {
 }
 
 export const AllowButton = (props: AllowButtonProps) => {
-  const { allowOverlay, setAllowOverlay } = useContext(OverlayContext);
+  const { allowOverlay, setAllowOverlay, intervalId } = useContext(OverlayContext);
 
   let title = allowOverlay ? 'Hide Companion Extension' : 'Show Companion Extension';
 
@@ -20,6 +20,7 @@ export const AllowButton = (props: AllowButtonProps) => {
         className='absolute inset-y-0 right-6 w-12 h-12 bg-unit-panel border-unit-panel border-2 shadow-unit-panel'
         style={{ top: '60%'}}
         onClick={() => {
+          clearInterval(intervalId);
           setAllowOverlay(!allowOverlay);
         }}>
           <img 
