@@ -12,7 +12,7 @@ const getExtras = async (): Promise<Extras> => {
   } catch {
     console.log('Error getting current track');
     const extras: Extras = {
-      trackTitle:parseTrack(defaultTrack),
+      trackTitle: parseTrack(defaultTrack),
     }
     return extras;
   }

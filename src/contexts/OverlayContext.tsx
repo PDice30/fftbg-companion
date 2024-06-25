@@ -62,7 +62,7 @@ export const OverlayContext = createContext<OverlayContextType>({
   track: '',
   setTrack: () => { '' },
   allowNewTrackPopup: false,
-  setAllowNewTrackPopup: () => { false },
+  setAllowNewTrackPopup: () => { true },
   alwaysShowStars: false,
   setAlwaysShowStars: () => { false },
   isPanelTransparent: false,
@@ -85,7 +85,7 @@ export const OverlayProvider = (props: React.PropsWithChildren) => {
   const [currentUnits, setCurrentUnits] = useState<Unit[]>([]);
   const [map, setMap] = useState<FFTMap>(defaultMap);
   const [track, setTrack] = useState<string>('');
-  const [allowNewTrackPopup, setAllowNewTrackPopup] = useState<boolean>(false);
+  const [allowNewTrackPopup, setAllowNewTrackPopup] = useState<boolean>(true);
   const [alwaysShowStars, setAlwaysShowStars] = useState<boolean>(false);
   const [isPanelTransparent, setIsPanelTransparent] = useState<boolean>(false);
   const [dataHasBeenFetched, setDataHasBeenFetched] = useState<boolean>(false);
