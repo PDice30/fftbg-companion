@@ -13,11 +13,11 @@ export const EquipmentText = () => {
         <></>
       :
         <>
-          <PanelText text={unit.Mainhand} toolTipType='Item' canBeNotable={true} /> 
-          <PanelText text={unit.Offhand} toolTipType='Item' canBeNotable={true} />
-          <PanelText text={unit.Head} toolTipType='Item' canBeNotable={true} />
-          <PanelText text={unit.Armor} toolTipType='Item' canBeNotable={true} />
-          <PanelText text={unit.Accessory} toolTipType='Item' canBeNotable={true} />
+          <PanelText text={unit.Mainhand} toolTipType='Item' canBeNotable={true} isItem={true} /> 
+          <PanelText text={unit.Offhand} toolTipType='Item' canBeNotable={true} isItem={true} />
+          <PanelText text={unit.Head} toolTipType='Item' canBeNotable={true} isItem={true} />
+          <PanelText text={unit.Armor} toolTipType='Item' canBeNotable={true} isItem={true} />
+          <PanelText text={unit.Accessory} toolTipType='Item' canBeNotable={true} isItem={true} />
         </>
       }
       

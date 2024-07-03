@@ -1,7 +1,7 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTips } from "../../models";
-import { BASE_IMAGE_URL, NOTABLES } from "../../constants";
+import { BASE_IMAGE_URL, abilityNotables } from "../../constants";
 import { getSizeUp } from "../../utils/textHelper";
 import { Tooltip } from "@mui/material";
 
@@ -35,7 +35,7 @@ export const Examine = () => {
       detailDisplay = unit.ClassSkills.map((skill, index) => {
         let style = 'inline-block';
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-        style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
+        style += abilityNotables.includes(skill) ? ' font-extrabold' : '';
         return (
           <Tooltip key={index} title={toolTips['Ability']?.get(skill)} arrow placement='left'>
             <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ClassSkills.length) ? '' : ', ')}</p>
@@ -47,7 +47,7 @@ export const Examine = () => {
       detailDisplay = unit.ExtraSkills.map((skill, index) => {
         let style = 'inline-block';
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-call
-        style += NOTABLES.includes(skill) ? ' font-extrabold' : '';
+        style += abilityNotables.includes(skill) ? ' font-extrabold' : '';
         return (
           <Tooltip key={index} title={toolTips['Ability']?.get(skill)} arrow placement='left'>
             <p className={style} key={index}>{' ' + skill + ((index + 1 === unit.ExtraSkills.length) ? '' : ', ')}</p>

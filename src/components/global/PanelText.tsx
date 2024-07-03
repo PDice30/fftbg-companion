@@ -1,19 +1,22 @@
 import { useContext } from "react";
 import { OverlayContext } from "../../contexts/OverlayContext";
 import { ToolTipType } from "../../models";
-import { NOTABLES } from "../../constants";
+import { abilityNotables, itemNotables } from "../../constants";
 
 type PanelTextProps = {
   toolTipType: ToolTipType
   text?: string;
   canBeNotable?: boolean;
+  isItem?: boolean;
+  isAbility?: boolean;
 }
 
 export const PanelText = (props: PanelTextProps) => {
   const { setExamineText, setToolTipType, textSize } = useContext(OverlayContext);
   let textStyle = 'h-1/6 py-1 px-2';
   if (props.canBeNotable && props.text) {
-    textStyle += NOTABLES.includes(props.text) ? ' font-extrabold' : '';
+    if (props.isItem) textStyle += itemNotables.includes(props.text) ? ' font-extrabold' : '';
+    if (props.isAbility) textStyle += abilityNotables.includes(props.text) ? ' font-extrabold' : ''
   }
 
   const textLength = textSize === 'text-lg' ? 12 : 14;
