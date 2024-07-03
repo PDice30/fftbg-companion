@@ -13,7 +13,7 @@ type SettingsPanelProps = {
 
 export const SettingsPanel = (props: SettingsPanelProps) => {
 
-  const { allowNewTrackPopup, setAllowNewTrackPopup, alwaysShowStars, setAlwaysShowStars, isPanelTransparent, setIsPanelTransparent } = useContext(OverlayContext);
+  const { allowNewTrackPopup, setAllowNewTrackPopup, isPanelTransparent, setIsPanelTransparent } = useContext(OverlayContext);
 
   const songPopupTitle = allowNewTrackPopup ? 'Hide new song popup' : 'Show new song popup';
   // const compatibilityStarsTitle = alwaysShowStars ? 'Hide stars without hover' : 'Show stars without hover';
