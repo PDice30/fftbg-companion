@@ -1143,7 +1143,6 @@ const defaultTournament: Tournament = {
     "red",
     "champion"
   ],
-  "Pots": null,
   "SkillDrop": "Beastmaster",
   "Entrants": [
     "mrubiq",

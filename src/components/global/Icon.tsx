@@ -19,8 +19,6 @@ export const Icon = (iconProps: IconProps) => {
 
   if (iconProps.flip) style += ' scale-x-[-1]';
 
-  console.log(style);
-
   let url;
 
   switch (iconProps.type) {

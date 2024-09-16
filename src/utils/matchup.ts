@@ -33,4 +33,24 @@ const determineMatchup = (winners: string[]) => {
   return DEFAULT_MATCHUP;
 }
 
-export default determineMatchup;
+const determineMatchupLosersAdvance = (winners: string[]) => {
+  const matchNumber = winners.length;
+  const finalFour = (TEAMS as string[]).filter(team => !winners.slice(0, 4).includes(team));
+
+  if (matchNumber < 4) return MATCHUPS[matchNumber][0];
+
+  if (matchNumber === 4) return [finalFour[0], finalFour[1]] as TeamName[];
+  if (matchNumber === 5) return [finalFour[2], finalFour[3]] as TeamName[];
+
+  const topTwo = (TEAMS as string[]).filter(team => !winners.slice(0, 6).includes(team));
+
+  if (matchNumber === 6) return [topTwo[0], topTwo[1]] as TeamName[];
+
+  const finalist = (TEAMS as string[]).filter(team => !winners.includes(team));
+
+  if (matchNumber === 7) return [finalist[0], 'champion'] as TeamName[];
+
+  if (matchNumber === 8) return [finalist[0], finalist[0]] as TeamName[];
+}
+
+export { determineMatchup, determineMatchupLosersAdvance };

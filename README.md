@@ -85,6 +85,7 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 - Fixed some various text and character encoding bugs
 - Fixed an issue with an request interval not being cancelled
 - Flipped second hand equipment slot icon
+- Added handling for Losers_Advance Tournament
 
 1.4.0:
 - Added Tooltips for Class, Monster Class, and Zodiac

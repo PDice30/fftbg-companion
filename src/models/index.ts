@@ -10,10 +10,11 @@ export type Tournament = {
   Teams: Teams,
   Maps: string[],
   Winners: string[],
-  Pots: string[] | null, //?
+  Pots?: string[],
   SkillDrop: string,
   Entrants: string[],
   Snubs: string[],
+  Memes?: string[] 
 }
 
 export type Teams = {

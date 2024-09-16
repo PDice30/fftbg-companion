@@ -1,7 +1,7 @@
 import { BASE_API_URL } from "../constants";
 import { DataResponse, Tournament } from "../models";
 import defaultTournament from "../data/tournament";
-import determineMatchup from "./matchup";
+import { determineMatchup, determineMatchupLosersAdvance } from "./matchup";
 import getExtras, { getMap } from "./extrasHelper";
 // import fetchJSON from "./fetch";
 
@@ -12,7 +12,10 @@ const getData = async (): Promise<DataResponse> => {
     const id = (await (await fetch(`${BASE_API_URL}tournaments?limit=1`)).json() as Tournament[])[0].ID.toString();
     const tournament = (await (await fetch(`${BASE_API_URL}tournament/${id}`)).json() as Tournament);
 
-    const matchup = determineMatchup(tournament.Winners);
+    const matchup = tournament.Memes?.includes('losers_advance') 
+      ? determineMatchupLosersAdvance(tournament.Winners)
+      : determineMatchup(tournament.Winners)
+
     const map = getMap(tournament.Winners, tournament.Maps);
 
     const extras = await getExtras();
