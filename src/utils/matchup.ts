@@ -51,6 +51,8 @@ const determineMatchupLosersAdvance = (winners: string[]) => {
   if (matchNumber === 7) return [finalist[0], 'champion'] as TeamName[];
 
   if (matchNumber === 8) return [finalist[0], finalist[0]] as TeamName[];
+
+  return DEFAULT_MATCHUP;
 }
 
 export { determineMatchup, determineMatchupLosersAdvance };

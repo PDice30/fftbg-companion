@@ -87,7 +87,7 @@ export type FFTMap = {
 }
 
 export type Track = {
-  Title: string,
+  Title: string, 
   Start: string, // might be datetimes
   End: string,
   LastMod: string,

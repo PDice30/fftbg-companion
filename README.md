@@ -78,6 +78,10 @@ The asset link to the Altima.ttf file in the build is incorrect for Twitch asset
 
 ## Version History
 
+1.4.2:
+- Moved Track Popup z index to be behind unit panels
+- Set mode to Public on Twitch for any streamer to use
+
 1.4.1:
 - Updated Notable List
 - New Track Popup defaults to On

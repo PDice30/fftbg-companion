@@ -11,7 +11,7 @@ export const TrackPopup = () => {
 
   if (track && track.length > 0) {
     return (
-      <div key={track} style={{ left: '20%' }} className='w-2/5 h-12 track-popup absolute text-center overflow-hidden bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
+      <div key={track} style={{ left: '20%', zIndex: '1' }} className='w-2/5 h-12 track-popup absolute text-center overflow-hidden bg-unit-panel border-unit-panel border-2 shadow-unit-panel'>
         <img 
           className='absolute align-middle items-center left-0 bottom-0 pl-4 pt-2 pb-2' 
           src={BASE_MUSTADIO_URL + 'items/Fairy Harp.png'} 

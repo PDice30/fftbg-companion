@@ -26,9 +26,10 @@ export const UnitPanel = (props: UnitPanelProps) => {
   if (props.index === 3 || props.index === 7) className += ' bottom-8';
 
   return (
-    <div className={className} style={props.side === 1 
-      ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A', opacity: opacity } 
-      : {left: '30.5%', textShadow: '2px 2px 2px #857C6A', opacity: opacity }}>
+    <div className={className} style={
+      props.side === 1 
+      ? {left: '9.5%', textShadow: '2px 2px 2px #857C6A', opacity: opacity, zIndex: '2' } 
+      : {left: '30.5%', textShadow: '2px 2px 2px #857C6A', opacity: opacity, zIndex: '2' }}>
 
       <Details />
 
